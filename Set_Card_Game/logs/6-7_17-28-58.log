@@ -1,0 +1,10 @@
+[17:28:58.628] [INFO   ] thread main starting.
+[17:28:58.634] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[17:28:58.635] [SEVERE ] configuration file was loaded from resources directory.
+[17:28:58.658] [SEVERE ] error creating swing user interface: 
+No X11 DISPLAY variable was set,
+but this program performed an operation which requires it.
+[17:28:58.659] [SEVERE ] will try to run without user interface
+[17:28:58.659] [SEVERE ] warning: running with human players with no user interface
+[17:28:58.662] [INFO   ] thread dealer starting.
+[17:28:58.662] [INFO   ] thread dealer starting.
