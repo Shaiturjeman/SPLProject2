@@ -75,8 +75,18 @@ public class Dealer implements Runnable {
     /**
      * Called when the game should be terminated.
      */
+
     public void terminate() {
-        // TODO implement
+                // TODO implement
+        terminate = true;
+        for(Player player : players){
+            if(!player.getTerminate()){
+                player.terminate();
+            }
+        }
+        
+
+
     }
 
     /**
@@ -92,6 +102,7 @@ public class Dealer implements Runnable {
      * Checks cards should be removed from the table and removes them.
      */
     private void removeCardsFromTable() {
+
         // TODO implement
     }
 

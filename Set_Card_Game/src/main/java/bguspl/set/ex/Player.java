@@ -123,7 +123,8 @@ public class Player implements Runnable {
      * @post - the player's score is increased by 1.
      * @post - the player's score is updated in the ui.
      */
-    public void point() {
+    public void point() {   
+        synchronized (this) { notify(); }
         // TODO implement
 
         int ignored = table.countCards(); // this part is just for demonstration in the unit tests
@@ -139,5 +140,9 @@ public class Player implements Runnable {
 
     public int score() {
         return score;
+    }
+
+    public boolean getTerminate() {
+        return terminate;
     }
 }

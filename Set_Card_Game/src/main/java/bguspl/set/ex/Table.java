@@ -87,14 +87,19 @@ public class Table {
      * @post - the card placed is on the table, in the assigned slot.
      */
     public void placeCard(int card, int slot) {
-        try {
-            Thread.sleep(env.config.tableDelayMillis);
-        } catch (InterruptedException ignored) {}
+        synchronized(this){
+            try {
+                Thread.sleep(env.config.tableDelayMillis);
+            } catch (InterruptedException ignored) {}
+    
+            cardToSlot[card] = slot;
+            slotToCard[slot] = card;
+    
+            
+            // TODO implement
 
-        cardToSlot[card] = slot;
-        slotToCard[slot] = card;
+        }
 
-        // TODO implement
     }
 
     /**
@@ -102,11 +107,14 @@ public class Table {
      * @param slot - the slot from which to remove the card.
      */
     public void removeCard(int slot) {
-        try {
-            Thread.sleep(env.config.tableDelayMillis);
-        } catch (InterruptedException ignored) {}
-
-        // TODO implement
+        synchronized(this){
+            try {
+                Thread.sleep(env.config.tableDelayMillis);
+            } catch (InterruptedException ignored) {}
+    
+            // TODO implement
+        }
+        
     }
 
     /**
@@ -115,7 +123,11 @@ public class Table {
      * @param slot   - the slot on which to place the token.
      */
     public void placeToken(int player, int slot) {
-        // TODO implement
+        synchronized(this){
+             // TODO implement
+
+        }
+
     }
 
     /**
@@ -125,7 +137,10 @@ public class Table {
      * @return       - true iff a token was successfully removed.
      */
     public boolean removeToken(int player, int slot) {
-        // TODO implement
-        return false;
+        synchronized(this){
+            // TODO implement
+            return false;
+        }
+
     }
 }
