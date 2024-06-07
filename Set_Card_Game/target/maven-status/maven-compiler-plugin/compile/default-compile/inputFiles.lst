@@ -1,0 +1,14 @@
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/UserInterface.java
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/ex/Player.java
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/UserInterfaceSwing.java
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/Config.java
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/InputManager.java
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/ThreadLogger.java
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/Main.java
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/Util.java
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/WindowManager.java
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/UserInterfaceDecorator.java
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/UtilImpl.java
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/ex/Dealer.java
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/Env.java
+/workspaces/SPLProject2/Set_Card_Game/src/main/java/bguspl/set/ex/Table.java
