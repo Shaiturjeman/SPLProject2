@@ -84,8 +84,6 @@ public class Dealer implements Runnable {
                 player.terminate();
             }
         }
-        
-
 
     }
 
@@ -104,7 +102,7 @@ public class Dealer implements Runnable {
     private void removeCardsFromTable() {
 
         // TODO implement
-        
+        /// HOT TO CONNECT BETWEEN THE PLAYERS CHOOSE AND THE CARDS THEY PUT THE TOKEN ON THE TABLE?
     }
 
     /**
@@ -112,6 +110,18 @@ public class Dealer implements Runnable {
      */
     private void placeCardsOnTable() {
         // TODO implement
+
+        List<int[]> sets = env.util.findSets(deck, env.config.tableSize);
+        for (int[] set : sets) {
+            for (int card : set) {
+                for(int i =0 ; i < table.slotToCard.length; i++){
+                    if(table.slotToCard[i] == null){
+                        table.placeCard(card, i);
+                        break;
+                    }
+                }   
+            }
+        }
     }
 
     /**
@@ -119,6 +129,11 @@ public class Dealer implements Runnable {
      */
     private void sleepUntilWokenOrTimeout() {
         // TODO implement
+        try {
+            Thread.sleep(env.config.turnTimeoutMillis);
+        } catch (InterruptedException ignored) {
+        }
+
     }
 
     /**
@@ -126,6 +141,7 @@ public class Dealer implements Runnable {
      */
     private void updateTimerDisplay(boolean reset) {
         // TODO implement
+            env.ui.setCountdown(env.config.turnTimeoutMillis, reset);
     }
 
     /**
@@ -133,6 +149,15 @@ public class Dealer implements Runnable {
      */
     private void removeAllCardsFromTable() {
         // TODO implement
+        if(table.countCards() != 0){
+            for(int i = 0; i < env.config.tableSize; i++){
+                if(table.slotToCard[i] != null){
+                    deck.add(table.slotToCard[i]);
+                table.removeCard(i);
+                }
+            }
+        }
+        
     }
 
     /**
@@ -140,5 +165,23 @@ public class Dealer implements Runnable {
      */
     private void announceWinners() {
         // TODO implement
+        int[] scores = new int[players.length];
+        for (int i = 0; i < players.length; i++) {
+            scores[i] = players[i].score();
+        }
+        int maxScore = 0;
+        for (int score : scores) {
+            if (score > maxScore) {
+                maxScore = score;
+            }
+        }
+        for (int i = 0; i < players.length; i++) {
+            if (scores[i] == maxScore) {
+                env.ui.placeToken(i, i);
+            }
+        }
+        
+
+
     }
 }

@@ -94,9 +94,8 @@ public class Table {
     
             cardToSlot[card] = slot;
             slotToCard[slot] = card;
-    
-            
             // TODO implement
+            env.ui.placeCard(slot, card);
 
         }
 
@@ -111,8 +110,10 @@ public class Table {
             try {
                 Thread.sleep(env.config.tableDelayMillis);
             } catch (InterruptedException ignored) {}
-    
             // TODO implement
+
+            slotToCard[slot] = null;
+            env.ui.removeCard(slot);
         }
         
     }
@@ -125,6 +126,7 @@ public class Table {
     public void placeToken(int player, int slot) {
         synchronized(this){
              // TODO implement
+            env.ui.placeToken(player, slot);
 
         }
 
@@ -139,6 +141,7 @@ public class Table {
     public boolean removeToken(int player, int slot) {
         synchronized(this){
             // TODO implement
+            env.ui.removeToken(player, slot);
             return false;
         }
 
