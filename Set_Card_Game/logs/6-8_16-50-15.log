@@ -1,0 +1,45 @@
+[16:50:15.919] [INFO   ] thread main starting.
+[16:50:15.924] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[16:50:15.926] [SEVERE ] configuration file was loaded from resources directory.
+[16:50:15.950] [SEVERE ] error creating swing user interface: 
+No X11 DISPLAY variable was set,
+but this program performed an operation which requires it.
+[16:50:15.950] [SEVERE ] will try to run without user interface
+[16:50:15.951] [SEVERE ] warning: running with human players with no user interface
+[16:50:15.954] [INFO   ] thread dealer starting.
+[16:50:15.954] [INFO   ] thread dealer starting.
+[16:50:16.064] [SEVERE ] placing card 0 in slot 0
+[16:50:16.168] [SEVERE ] placing card 1 in slot 1
+[16:50:16.269] [SEVERE ] placing card 2 in slot 2
+[16:50:16.376] [SEVERE ] placing card 3 in slot 0
+[16:50:16.478] [SEVERE ] placing card 4 in slot 3
+[16:50:16.585] [SEVERE ] placing card 5 in slot 6
+[16:50:16.708] [SEVERE ] placing card 6 in slot 0
+[16:50:16.817] [SEVERE ] placing card 7 in slot 4
+[16:50:16.932] [SEVERE ] placing card 8 in slot 8
+[16:50:17.036] [SEVERE ] placing card 9 in slot 0
+[16:50:17.139] [SEVERE ] placing card 10 in slot 5
+[16:50:17.255] [SEVERE ] placing card 11 in slot 7
+[16:51:17.268] [SEVERE ] updating countdown to 60000
+[16:52:17.292] [SEVERE ] updating countdown to 60000
+[16:53:17.308] [SEVERE ] updating countdown to 60000
+[16:54:17.314] [SEVERE ] updating countdown to 60000
+[16:55:17.329] [SEVERE ] updating countdown to 60000
+[16:56:17.347] [SEVERE ] updating countdown to 60000
+[16:57:17.364] [SEVERE ] updating countdown to 60000
+[16:58:17.369] [SEVERE ] updating countdown to 60000
+[16:59:17.383] [SEVERE ] updating countdown to 60000
+[17:00:17.403] [SEVERE ] updating countdown to 60000
+[17:01:17.416] [SEVERE ] updating countdown to 60000
+[17:02:17.426] [SEVERE ] updating countdown to 60000
+[17:03:17.474] [SEVERE ] updating countdown to 60000
+[17:04:18.113] [SEVERE ] updating countdown to 60000
+[17:21:20.814] [SEVERE ] updating countdown to 60000
+[17:46:47.445] [SEVERE ] updating countdown to 60000
+[18:03:16.448] [SEVERE ] updating countdown to 60000
+[18:07:04.586] [SEVERE ] updating countdown to 60000
+[18:24:39.364] [SEVERE ] updating countdown to 60000
+[18:33:54.045] [SEVERE ] updating countdown to 60000
+[19:04:14.488] [SEVERE ] updating countdown to 60000
+[19:05:14.514] [SEVERE ] updating countdown to 60000
+[19:06:14.523] [SEVERE ] updating countdown to 60000
