@@ -1,0 +1,29 @@
+[12:58:10.528] [INFO   ] thread bguspl.set.Main.main() starting.
+[12:58:10.530] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[12:58:10.531] [SEVERE ] configuration file was loaded from resources directory.
+[12:58:10.547] [SEVERE ] error creating swing user interface: 
+No X11 DISPLAY variable was set,
+but this program performed an operation which requires it.
+[12:58:10.551] [SEVERE ] will try to run without user interface
+[12:58:10.551] [SEVERE ] warning: running with human players with no user interface
+[12:58:10.555] [INFO   ] thread dealer starting.
+[12:58:10.555] [INFO   ] thread dealer starting.
+[12:58:10.664] [SEVERE ] placing card 0 in slot 0
+[12:58:10.766] [SEVERE ] placing card 1 in slot 1
+[12:58:10.868] [SEVERE ] placing card 2 in slot 2
+[12:58:10.974] [SEVERE ] placing card 3 in slot 0
+[12:58:11.076] [SEVERE ] placing card 4 in slot 3
+[12:58:11.184] [SEVERE ] placing card 5 in slot 6
+[12:58:11.294] [SEVERE ] placing card 6 in slot 0
+[12:58:11.398] [SEVERE ] placing card 7 in slot 4
+[12:58:11.504] [SEVERE ] placing card 8 in slot 8
+[12:58:11.609] [SEVERE ] placing card 9 in slot 0
+[12:58:11.718] [SEVERE ] placing card 10 in slot 5
+[12:58:11.826] [SEVERE ] placing card 11 in slot 7
+[12:59:11.830] [SEVERE ] updating countdown to 60000
+[13:00:11.854] [SEVERE ] updating countdown to 60000
+[13:01:11.871] [SEVERE ] updating countdown to 60000
+[13:02:11.881] [SEVERE ] updating countdown to 60000
+[13:03:11.895] [SEVERE ] updating countdown to 60000
+[13:04:11.932] [SEVERE ] updating countdown to 60000
+[13:05:11.941] [SEVERE ] updating countdown to 60000

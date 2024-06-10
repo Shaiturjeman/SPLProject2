@@ -1,0 +1,22 @@
+[13:15:05.491] [INFO   ] thread bguspl.set.Main.main() starting.
+[13:15:05.494] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[13:15:05.495] [SEVERE ] configuration file was loaded from resources directory.
+[13:15:05.516] [SEVERE ] error creating swing user interface: 
+No X11 DISPLAY variable was set,
+but this program performed an operation which requires it.
+[13:15:05.517] [SEVERE ] will try to run without user interface
+[13:15:05.517] [SEVERE ] warning: running with human players with no user interface
+[13:15:05.521] [INFO   ] thread dealer starting.
+[13:15:05.522] [INFO   ] thread dealer starting.
+[13:15:05.634] [SEVERE ] placing card 0 in slot 0
+[13:15:05.737] [SEVERE ] placing card 1 in slot 1
+[13:15:05.841] [SEVERE ] placing card 2 in slot 2
+[13:15:05.945] [SEVERE ] placing card 3 in slot 0
+[13:15:06.048] [SEVERE ] placing card 4 in slot 3
+[13:15:06.151] [SEVERE ] placing card 5 in slot 6
+[13:15:06.257] [SEVERE ] placing card 6 in slot 0
+[13:15:06.359] [SEVERE ] placing card 7 in slot 4
+[13:15:06.466] [SEVERE ] placing card 8 in slot 8
+[13:15:06.569] [SEVERE ] placing card 9 in slot 0
+[13:15:06.672] [SEVERE ] placing card 10 in slot 5
+[13:15:06.776] [SEVERE ] placing card 11 in slot 7
