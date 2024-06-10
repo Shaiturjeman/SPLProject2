@@ -1,7 +1,6 @@
 package bguspl.set.ex;
 
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.BlockingQueue;
 
 import bguspl.set.Env;
 
@@ -56,7 +55,7 @@ public class Player implements Runnable {
     /**
      * Queue that handles the upcoming moves of the player.
      */
-    public final BlockingQueue<Integer> moves = new LinkedBlockingQueue<>();
+    public final LinkedBlockingQueue<Integer> moves = new LinkedBlockingQueue<>();
 
 
 
@@ -116,7 +115,6 @@ public class Player implements Runnable {
             if(table.slotToCard[slot] == null)
             {
                 table.placeToken(id, slot);
-                env.logger.info("player " + id + " placed a token in slot " + slot);
                 env.ui.placeToken(id, slot);
             }
 
@@ -124,7 +122,6 @@ public class Player implements Runnable {
             else if(table.slotToCard[slot] == id)
             {
                 table.removeToken(id, slot);
-                env.logger.info("player " + id + " removed a token from slot " + slot);
                 env.ui.removeToken(id, slot);
             }
         }
@@ -198,12 +195,7 @@ public class Player implements Runnable {
         env.ui.setScore(id, score);
 
         //freeze the player for marking a legal set.
-        env.logger.info("player " + id + " has been frozen");
         env.ui.setFreeze(id, env.config.pointFreezeMillis);
-
-
-        int ignored = table.countCards(); // this part is just for demonstration in the unit tests
-        env.ui.setScore(id, ++score);
     }
 
     /**
@@ -212,7 +204,6 @@ public class Player implements Runnable {
     public void penalty() {
 
         //freeze the player for marking an illegal set.
-        env.logger.info("player " + id + " has been penalized");
         env.ui.setFreeze(id, env.config.penaltyFreezeMillis);
         
         try
@@ -226,7 +217,6 @@ public class Player implements Runnable {
 
         //unfreeze the player when the penalty is over.
         env.ui.setFreeze(id, 0);
-        env.logger.info("player " + id + " has been unfrozen");
 
     }
 
