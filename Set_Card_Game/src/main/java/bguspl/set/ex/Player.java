@@ -1,5 +1,8 @@
 package bguspl.set.ex;
 
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
 import bguspl.set.Env;
 
 /**
@@ -51,6 +54,14 @@ public class Player implements Runnable {
     private int score;
 
     /**
+     * Queue that handles the upcoming moves of the player.
+     */
+    public final BlockingQueue<Integer> moves = new LinkedBlockingQueue<>();
+
+
+
+
+    /**
      * The class constructor.
      *
      * @param env    - the environment object.
@@ -76,10 +87,47 @@ public class Player implements Runnable {
         if (!human) createArtificialIntelligence();
 
         while (!terminate) {
-            // TODO implement main player loop
+            try
+            {
+                int slot = moves.take();
+                proccessAction(slot);
+            }
+            catch (InterruptedException ignored) 
+            {
+                Thread.currentThread().interrupt();
+            }
+            
         }
         if (!human) try { aiThread.join(); } catch (InterruptedException ignored) {}
         env.logger.info("thread " + Thread.currentThread().getName() + " terminated.");
+    }
+
+    /**
+     * place or remove tokens on the table according to the player's queue of moves.
+     */
+    private void proccessAction(int slot) {
+        synchronized(this) { 
+            if(terminate)
+            {
+                return;
+            }
+
+            //if the slot is empty, place a token.
+            if(table.slotToCard[slot] == null)
+            {
+                table.placeToken(id, slot);
+                env.logger.info("player " + id + " placed a token in slot " + slot);
+                env.ui.placeToken(id, slot);
+            }
+
+            //remove the token from the slot.
+            else if(table.slotToCard[slot] == id)
+            {
+                table.removeToken(id, slot);
+                env.logger.info("player " + id + " removed a token from slot " + slot);
+                env.ui.removeToken(id, slot);
+            }
+        }
     }
 
     /**
@@ -105,7 +153,12 @@ public class Player implements Runnable {
      * Called when the game should be terminated.
      */
     public void terminate() {
-        // TODO implement
+        terminate = true; 
+        playerThread.interrupt();
+        if (aiThread != null)
+        {
+            aiThread.interrupt();
+        }
     }
 
     /**
@@ -114,7 +167,19 @@ public class Player implements Runnable {
      * @param slot - the slot corresponding to the key pressed.
      */
     public void keyPressed(int slot) {
-        // TODO implement
+        if (!terminate)
+        {
+            try 
+            {
+                moves.put(slot);
+            } 
+            catch (InterruptedException ignored) 
+            {
+                Thread.currentThread().interrupt();
+            }
+        }
+        
+
     }
 
     /**
@@ -125,7 +190,17 @@ public class Player implements Runnable {
      */
     public void point() {   
         synchronized (this) { notify(); }
-        // TODO implement
+
+        //increase the player's score by 1.
+        score++;
+
+        //update the player's score in the ui.
+        env.ui.setScore(id, score);
+
+        //freeze the player for marking a legal set.
+        env.logger.info("player " + id + " has been frozen");
+        env.ui.setFreeze(id, env.config.pointFreezeMillis);
+
 
         int ignored = table.countCards(); // this part is just for demonstration in the unit tests
         env.ui.setScore(id, ++score);
@@ -135,7 +210,24 @@ public class Player implements Runnable {
      * Penalize a player and perform other related actions.
      */
     public void penalty() {
-        // TODO implement
+
+        //freeze the player for marking an illegal set.
+        env.logger.info("player " + id + " has been penalized");
+        env.ui.setFreeze(id, env.config.penaltyFreezeMillis);
+        
+        try
+        {
+            Thread.sleep(env.config.penaltyFreezeMillis);
+        }
+        catch (InterruptedException ignored)
+        {
+            Thread.currentThread().interrupt();
+        }
+
+        //unfreeze the player when the penalty is over.
+        env.ui.setFreeze(id, 0);
+        env.logger.info("player " + id + " has been unfrozen");
+
     }
 
     public int score() {
