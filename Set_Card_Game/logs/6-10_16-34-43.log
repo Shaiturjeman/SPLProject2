@@ -1,0 +1,23 @@
+[16:34:43.652] [INFO   ] thread main starting.
+[16:34:43.658] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[16:34:43.660] [SEVERE ] configuration file was loaded from resources directory.
+[16:34:43.684] [SEVERE ] error creating swing user interface: 
+No X11 DISPLAY variable was set,
+but this program performed an operation which requires it.
+[16:34:43.685] [SEVERE ] will try to run without user interface
+[16:34:43.685] [SEVERE ] warning: running with human players with no user interface
+[16:34:43.689] [INFO   ] thread dealer starting.
+[16:34:43.690] [INFO   ] thread dealer starting.
+[16:34:43.808] [SEVERE ] placing card 0 in slot 0
+[16:34:43.915] [SEVERE ] placing card 1 in slot 1
+[16:34:44.022] [SEVERE ] placing card 2 in slot 2
+[16:34:44.126] [SEVERE ] placing card 3 in slot 0
+[16:34:44.229] [SEVERE ] placing card 4 in slot 3
+[16:34:44.331] [SEVERE ] placing card 5 in slot 6
+[16:34:44.436] [SEVERE ] placing card 6 in slot 0
+[16:34:44.541] [SEVERE ] placing card 7 in slot 4
+[16:34:44.648] [SEVERE ] placing card 8 in slot 8
+[16:34:44.755] [SEVERE ] placing card 9 in slot 0
+[16:34:44.858] [SEVERE ] placing card 10 in slot 5
+[16:34:44.963] [SEVERE ] placing card 11 in slot 7
+[16:35:44.982] [SEVERE ] updating countdown to 60000
