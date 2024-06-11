@@ -1,6 +1,9 @@
 package bguspl.set.ex;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.List;
 
 import bguspl.set.Env;
 
@@ -136,7 +139,12 @@ public class Player implements Runnable {
         aiThread = new Thread(() -> {
             env.logger.info("thread " + Thread.currentThread().getName() + " starting.");
             while (!terminate) {
-                // TODO implement player key press simulator
+                List<int[]> potentialSets = findPotentialSet();
+                if(!potentialSets.isEmpty())
+                {
+                    int[] set = potentialSets.get(0);
+                    
+                }
                 try {
                     synchronized (this) { wait(); }
                 } catch (InterruptedException ignored) {}
@@ -145,6 +153,24 @@ public class Player implements Runnable {
         }, "computer-" + id);
         aiThread.start();
     }
+
+    /**
+     * A method that finds a potential set of cards on the table.
+     */
+    private List<int[]> findPotentialSet() {
+        List<Integer> cardsOnDeck = new LinkedList<>();
+        for (int i = 0 ; i < table.slotToCard.length; i++)
+        {
+            if (table.slotToCard[i] == id)
+            {
+                cardsOnDeck.add(i);
+            }
+        }
+        List<int[]> potentialSets = env.util.findSets(cardsOnDeck, 1);
+        return potentialSets;
+
+    } 
+    
 
     /**
      * Called when the game should be terminated.
