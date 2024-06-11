@@ -1,6 +1,5 @@
 package bguspl.set.ex;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.List;
@@ -115,14 +114,14 @@ public class Player implements Runnable {
             }
 
             //if the slot is empty, place a token.
-            if(table.slotToCard[slot] == null)
+            if(table.tokens[slot] == null)
             {
                 table.placeToken(id, slot);
                 env.ui.placeToken(id, slot);
             }
 
             //remove the token from the slot.
-            else if(table.slotToCard[slot] == id)
+            else if(table.tokens[slot] == id)
             {
                 table.removeToken(id, slot);
                 env.ui.removeToken(id, slot);
@@ -143,7 +142,12 @@ public class Player implements Runnable {
                 if(!potentialSets.isEmpty())
                 {
                     int[] set = potentialSets.get(0);
-                    
+                    for (int card : set)
+                    {
+                        int slot = table.cardToSlot[card];
+                        moves.add(slot);
+                        moves.notify();
+                    }
                 }
                 try {
                     synchronized (this) { wait(); }
@@ -161,7 +165,7 @@ public class Player implements Runnable {
         List<Integer> cardsOnDeck = new LinkedList<>();
         for (int i = 0 ; i < table.slotToCard.length; i++)
         {
-            if (table.slotToCard[i] == id)
+            if (table.slotToCard[i] != null && table.tokens[i] == null)
             {
                 cardsOnDeck.add(i);
             }
