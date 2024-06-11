@@ -42,6 +42,9 @@ public class Dealer implements Runnable {
 
     //dealer Thread 
     private Thread dealerThread ;
+    
+    //cards need to be removed
+    private Integer[] cardsShouldBeRemoved ;
 
 
 
@@ -54,6 +57,11 @@ public class Dealer implements Runnable {
         this.players = players;
         deck = IntStream.range(0, env.config.deckSize).boxed().collect(Collectors.toList());
         Collections.shuffle(deck);
+        cardsShouldBeRemoved = new Integer[env.config.featureSize];
+        for(int i = 0; i < env.config.featureSize; i++){
+            cardsShouldBeRemoved[i] = null;
+        }
+
         
     }
 
@@ -118,10 +126,15 @@ public class Dealer implements Runnable {
      * Checks cards should be removed from the table and removes them.
      */
     private void removeCardsFromTable() {
-
-
-        
-       
+        if(cardsShouldBeRemoved != null){
+            for(int i = 0; i < cardsShouldBeRemoved.length; i++){
+                for(int j = 0; j < env.config.tableSize; j++){
+                    if(table.slotToCard[j] == cardsShouldBeRemoved[i]){
+                        table.removeCard(j);
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -198,5 +211,18 @@ public class Dealer implements Runnable {
         
 
 
+    }
+
+    public boolean SetCheck(Integer[] cards){
+        int[] cardsCopy = new int[cards.length];
+        for(int i = 0; i < cards.length; i++){
+            cardsCopy[i] = cards[i];
+        }
+        if(env.util.testSet(cardsCopy)){
+            cardsShouldBeRemoved = cards;
+            return true;
+        }
+        return false;
+        
     }
 }

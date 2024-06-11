@@ -57,7 +57,12 @@ public class Player implements Runnable {
     /**
      * Queue that handles the upcoming moves of the player.
      */
-    public final LinkedBlockingQueue<Integer> moves = new LinkedBlockingQueue<>(3);
+    public  LinkedBlockingQueue<Integer> moves ;
+    private Integer[] playerTokens ;
+    private int TokensCounter;
+    public Dealer dealer;
+
+
 
 
 
@@ -76,6 +81,12 @@ public class Player implements Runnable {
         this.table = table;
         this.id = id;
         this.human = human;
+        moves = new LinkedBlockingQueue<>();
+        playerTokens = new Integer[env.config.featureSize];
+        for(int i=0; i < env.config.featureSize; i++)
+        {
+            playerTokens[i] = null;
+        }
     }
 
     /**
@@ -88,46 +99,43 @@ public class Player implements Runnable {
         if (!human) createArtificialIntelligence();
 
         while (!terminate) {
-            try
-            {
-                int slot = moves.take();
-                proccessAction(slot);
+            if(!moves.isEmpty()){
+                int slot = moves.poll();
+                if(table.slotToCard[slot]!=null){
+                    table.placeToken(slot, this.id);
+                    if(TokenPlaced(slot))
+                    {
+                        TokensCounter++;
+                        playerTokens[TokensCounter] = table.slotToCard[slot];
+                        if(TokensCounter == env.config.featureSize - 1){
+                            boolean isSet = dealer.SetCheck(playerTokens);
+                            if(isSet)
+                            {
+                                point();
+                            }
+                            else
+                            {
+                                penalty();
+                            }
+                        }
+
+                    }
+                    else{
+                        TokensCounter--;
+                        for(Integer t: playerTokens)
+                            if(t == table.slotToCard[slot])
+                                t = null;
+                    }
+
+                }
+
             }
-            catch (InterruptedException ignored) 
-            {
-                Thread.currentThread().interrupt();
-            }
-            
-        }
+        } 
         if (!human) try { aiThread.join(); } catch (InterruptedException ignored) {}
         env.logger.info("thread " + Thread.currentThread().getName() + " terminated.");
     }
 
-    /**
-     * place or remove tokens on the table according to the player's queue of moves.
-     */
-    private void proccessAction(int slot) {
-        synchronized(this) { 
-            if(terminate)
-            {
-                return;
-            }
 
-            //if the slot is empty, place a token.
-            if(table.tokens[slot] == null)
-            {
-                table.placeToken(id, slot);
-                env.ui.placeToken(id, slot);
-            }
-
-            //remove the token from the slot.
-            else if(table.tokens[slot] == id)
-            {
-                table.removeToken(id, slot);
-                env.ui.removeToken(id, slot);
-            }
-        }
-    }
 
     /**
      * Creates an additional thread for an AI (computer) player. The main loop of this thread repeatedly generates
@@ -267,5 +275,14 @@ public class Player implements Runnable {
 
     public boolean getTerminate() {
         return terminate;
+    }
+
+    public boolean TokenPlaced(int slot) {
+        for(int i =0; i < env.config.players; i++)
+        {
+            if(table.tokens[slot][i] == this.id)
+                return true;
+        }
+        return false;
     }
 }

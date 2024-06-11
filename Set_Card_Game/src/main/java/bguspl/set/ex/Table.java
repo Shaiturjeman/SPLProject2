@@ -130,17 +130,24 @@ public class Table {
      */
     public void placeToken(int player, int slot) {
         synchronized(this){
-            env.ui.placeToken(player, slot);
-            boolean placed =false;
-            for(int i=0; placed == false && i<env.config.players; i++){
-                if(tokens[slot][i] == null){
-                    tokens[slot][i] = player;
-                    placed = true;
-                }
-            }
+            if(slotToCard[slot] != null){
+                boolean placed =false;
+                for(int i=0; placed == false && i<env.config.players; i++){
+                    if(tokens[slot][i] == null){
+                        tokens[slot][i] = player;
+                        placed = true;
+                        env.ui.placeToken(player, slot);
+                    }
+                    else if(tokens[slot][i] == player){
+                        removeToken(player, slot);
+                    }
+                
 
-        }
+                 }
+            return;
+             }
 
+              }
     }
 
     /**
@@ -151,10 +158,12 @@ public class Table {
      */
     public boolean removeToken(int player, int slot) {
         synchronized(this){
-            for(int i=0; i<env.config.players; i++){
-                if(tokens[slot][i] == player){
-                    tokens[slot][i] = null;
-                    return true;
+            if(slotToCard[slot] != null){
+                for(int i=0; i<env.config.players; i++){
+                    if(tokens[slot][i] == player){
+                        tokens[slot][i] = null;
+                        return true;
+                    }
                 }
             }
             return false;
