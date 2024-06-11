@@ -30,6 +30,11 @@ public class Table {
     protected final Integer[] cardToSlot; // slot per card (if any)
 
     /**
+     * Mapping between a slot and the id of the player whose token is placed in it (null if none).
+     */
+    public Integer[] tokens; // token per slot (if any)
+
+    /**
      * Constructor for testing.
      *
      * @param env        - the game environment objects.
@@ -37,7 +42,6 @@ public class Table {
      * @param cardToSlot - mapping between a card and the slot it is in (null if none).
      */
     public Table(Env env, Integer[] slotToCard, Integer[] cardToSlot) {
-
         this.env = env;
         this.slotToCard = slotToCard;
         this.cardToSlot = cardToSlot;
