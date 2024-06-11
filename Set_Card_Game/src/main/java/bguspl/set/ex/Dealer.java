@@ -5,6 +5,8 @@ import bguspl.set.Env;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.Collections;
+import java.util.stream.Stream;
 
 /**
  * This class manages the dealer's threads and data
@@ -36,6 +38,14 @@ public class Dealer implements Runnable {
      * The time when the dealer needs to reshuffle the deck due to turn timeout.
      */
     private long reshuffleTime = Long.MAX_VALUE;
+    
+
+    //dealer Thread 
+    Thread dealerThread ;
+
+
+
+
 
     public Dealer(Env env, Table table, Player[] players) {
         this.env = env;
@@ -49,6 +59,11 @@ public class Dealer implements Runnable {
      */
     @Override
     public void run() {
+        dealerThread = Thread.currentThread();
+        for (Player player : players) {
+            Thread playerThread = new Thread(player, "playerID: " + player.id);
+            playerThread.start();
+        }
         env.logger.info("thread " + Thread.currentThread().getName() + " starting.");
         while (!shouldFinish()) {
             placeCardsOnTable();
@@ -109,19 +124,17 @@ public class Dealer implements Runnable {
      * Check if any cards can be removed from the deck and placed on the table.
      */
     private void placeCardsOnTable() {
-        // TODO implement
-
-        List<int[]> sets = env.util.findSets(deck, env.config.tableSize);
-        for (int[] set : sets) {
-            for (int card : set) {
-                for(int i =0 ; i < table.slotToCard.length; i++){
-                    if(table.slotToCard[i] == null){
-                        table.placeCard(card, i);
-                        break;
-                    }
-                }   
+        Collections.shuffle(deck);
+        IntStream stream = IntStream.range(0, env.config.tableSize);
+        Stream<Integer> boxedStream = stream.boxed();
+        List<Integer> slotList = boxedStream.collect(Collectors.toList());
+        Collections.shuffle(slotList);
+        for(int s: slotList){
+            if(!(deck.size() == 0) && table.slotToCard[s] == null){
+                table.placeCard(deck.remove(0), s);
             }
         }
+        
     }
 
     /**
