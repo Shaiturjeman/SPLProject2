@@ -1,0 +1,24 @@
+[13:15:03.676] [INFO   ] thread main starting.
+[13:15:03.683] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[13:15:03.684] [SEVERE ] configuration file was loaded from resources directory.
+[13:15:04.435] [INFO   ] thread dealer starting.
+[13:15:04.438] [INFO   ] thread playerID: 0 starting.
+[13:15:04.439] [INFO   ] thread dealer starting.
+[13:15:04.438] [INFO   ] thread playerID: 1 starting.
+[13:15:04.546] [SEVERE ] placing card 6 in slot 0
+[13:15:04.651] [SEVERE ] placing card 2 in slot 1
+[13:15:04.755] [SEVERE ] placing card 0 in slot 2
+[13:15:04.857] [SEVERE ] placing card 3 in slot 3
+[13:15:04.965] [SEVERE ] placing card 10 in slot 4
+[13:15:05.068] [SEVERE ] placing card 11 in slot 5
+[13:15:05.173] [SEVERE ] placing card 9 in slot 6
+[13:15:05.278] [SEVERE ] placing card 5 in slot 7
+[13:15:05.381] [SEVERE ] placing card 1 in slot 8
+[13:15:05.486] [SEVERE ] placing card 8 in slot 9
+[13:15:05.591] [SEVERE ] placing card 4 in slot 10
+[13:15:05.694] [SEVERE ] placing card 7 in slot 11
+[13:15:15.642] [SEVERE ] key 74 was pressed by player 2
+[13:15:16.487] [SEVERE ] key 74 was pressed by player 2
+[13:15:16.792] [SEVERE ] key 74 was pressed by player 2
+[13:15:17.734] [SEVERE ] key 74 was pressed by player 2
+[13:15:18.028] [SEVERE ] key 74 was pressed by player 2

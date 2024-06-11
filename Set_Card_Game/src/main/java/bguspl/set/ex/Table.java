@@ -32,7 +32,7 @@ public class Table {
     /**
      * Mapping between a slot and the id of the player whose token is placed in it (null if none).
      */
-    public Integer[] tokens; // token per slot (if any)
+    public Integer[][] tokens; // token per slot (if any)
 
     /**
      * Constructor for testing.
@@ -45,6 +45,10 @@ public class Table {
         this.env = env;
         this.slotToCard = slotToCard;
         this.cardToSlot = cardToSlot;
+        tokens = new Integer[slotToCard.length][env.config.players];
+        for(int i = 0; i < slotToCard.length; i++)
+            for(int j = 0; j < env.config.players; j++)
+                tokens[i][j] = null;
     }
 
     /**
@@ -127,7 +131,13 @@ public class Table {
     public void placeToken(int player, int slot) {
         synchronized(this){
             env.ui.placeToken(player, slot);
-            tokens[slot] = player;
+            boolean placed =false;
+            for(int i=0; placed == false && i<env.config.players; i++){
+                if(tokens[slot][i] == null){
+                    tokens[slot][i] = player;
+                    placed = true;
+                }
+            }
 
         }
 
@@ -141,11 +151,11 @@ public class Table {
      */
     public boolean removeToken(int player, int slot) {
         synchronized(this){
-            if (tokens[slot] == player)
-            {
-                tokens[slot] = null;
-                env.ui.removeToken(player, slot);
-                return true;
+            for(int i=0; i<env.config.players; i++){
+                if(tokens[slot][i] == player){
+                    tokens[slot][i] = null;
+                    return true;
+                }
             }
             return false;
         }

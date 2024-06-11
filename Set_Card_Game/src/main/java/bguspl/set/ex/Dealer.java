@@ -5,8 +5,8 @@ import bguspl.set.Env;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.Collections;
 import java.util.stream.Stream;
+import java.util.Collections;
 
 /**
  * This class manages the dealer's threads and data
@@ -41,7 +41,8 @@ public class Dealer implements Runnable {
     
 
     //dealer Thread 
-    Thread dealerThread ;
+    private Thread dealerThread ;
+
 
 
 
@@ -52,6 +53,8 @@ public class Dealer implements Runnable {
         this.table = table;
         this.players = players;
         deck = IntStream.range(0, env.config.deckSize).boxed().collect(Collectors.toList());
+        Collections.shuffle(deck);
+        
     }
 
     /**
@@ -116,25 +119,24 @@ public class Dealer implements Runnable {
      */
     private void removeCardsFromTable() {
 
-        // TODO implement
-        /// HOT TO CONNECT BETWEEN THE PLAYERS CHOOSE AND THE CARDS THEY PUT THE TOKEN ON THE TABLE?
+
+        
+       
     }
 
     /**
      * Check if any cards can be removed from the deck and placed on the table.
      */
     private void placeCardsOnTable() {
-        Collections.shuffle(deck);
-        IntStream stream = IntStream.range(0, env.config.tableSize);
+        IntStream stream = IntStream.range(0, env.config.tableSize);    
         Stream<Integer> boxedStream = stream.boxed();
         List<Integer> slotList = boxedStream.collect(Collectors.toList());
         Collections.shuffle(slotList);
-        for(int s: slotList){
-            if(!(deck.size() == 0) && table.slotToCard[s] == null){
+        for (int s: slotList){
+            if(deck.size()!=0  && table.slotToCard[s] == null){
                 table.placeCard(deck.remove(0), s);
             }
         }
-        
     }
 
     /**
