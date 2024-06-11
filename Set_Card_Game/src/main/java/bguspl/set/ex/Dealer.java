@@ -77,13 +77,13 @@ public class Dealer implements Runnable {
      */
 
     public void terminate() {
-                // TODO implement
         terminate = true;
         for(Player player : players){
             if(!player.getTerminate()){
                 player.terminate();
             }
         }
+        env.ui.dispose();
 
     }
 
