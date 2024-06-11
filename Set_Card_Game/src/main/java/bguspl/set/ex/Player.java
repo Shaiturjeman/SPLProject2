@@ -57,7 +57,7 @@ public class Player implements Runnable {
     /**
      * Queue that handles the upcoming moves of the player.
      */
-    public final LinkedBlockingQueue<Integer> moves = new LinkedBlockingQueue<>();
+    public final LinkedBlockingQueue<Integer> moves = new LinkedBlockingQueue<>(3);
 
 
 
@@ -144,9 +144,20 @@ public class Player implements Runnable {
                     int[] set = potentialSets.get(0);
                     for (int card : set)
                     {
+                        if (table.cardToSlot[card] == null)
+                        {
+                            continue;
+                        }
                         int slot = table.cardToSlot[card];
-                        moves.add(slot);
-                        moves.notify();
+                        synchronized (moves)
+                        {
+                            try {
+                                moves.put(slot);
+                            } catch (InterruptedException ignored) {
+                                ignored.printStackTrace();
+                            }
+                            moves.notify();
+                        }
                     }
                 }
                 try {
