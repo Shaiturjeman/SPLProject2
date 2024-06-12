@@ -1,0 +1,7 @@
+[07:29:49.195] [INFO   ] thread main starting.
+[07:29:49.204] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[07:29:49.207] [SEVERE ] configuration file was loaded from resources directory.
+[07:29:50.156] [INFO   ] thread dealer starting.
+[07:29:50.191] [INFO   ] thread playerID: 0 starting.
+[07:29:50.193] [INFO   ] thread playerID: 1 starting.
+[07:29:50.193] [INFO   ] thread dealer starting.

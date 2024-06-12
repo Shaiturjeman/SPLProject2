@@ -77,6 +77,9 @@ public class Dealer implements Runnable {
         }
         env.logger.info("thread " + Thread.currentThread().getName() + " starting.");
         while (!shouldFinish()) {
+            Collections.shuffle(deck);
+            reshuffleTime = System.currentTimeMillis() + env.config.turnTimeoutMillis;
+            updateTimerDisplay(false);
             placeCardsOnTable();
             timerLoop();
             updateTimerDisplay(false);
@@ -95,7 +98,25 @@ public class Dealer implements Runnable {
             updateTimerDisplay(false);
             removeCardsFromTable();
             placeCardsOnTable();
+
+            // if(table.countCards()!= 0 && !deck.isEmpty()){
+            //     List<Integer> cardsOnTable = table.getCardOnTabele();
+            //     if(env.util.findSets(cardsOnTable, 1).size() == 0){
+            //         removeAllCardsFromTable();
+            //         placeCardsOnTable();
+            //         updateTimerDisplay(true);
+            //     }
+            // }
+            
+             if(deck.isEmpty() && table.countCards() != 0){
+                List<Integer> cardsOnTable = table.getCardOnTabele();
+                if(env.util.findSets(cardsOnTable, 1).size() == 0){
+                    announceWinners();
+                    terminate();
+                }
+            }
         }
+
     }
 
     /**
@@ -126,14 +147,16 @@ public class Dealer implements Runnable {
      * Checks cards should be removed from the table and removes them.
      */
     private void removeCardsFromTable() {
-        if(cardsShouldBeRemoved != null){
-            for(int i = 0; i < cardsShouldBeRemoved.length; i++){
+        for(int i = 0; i < cardsShouldBeRemoved.length; i++){
+            if(cardsShouldBeRemoved[i] == null){
                 for(int j = 0; j < env.config.tableSize; j++){
                     if(table.slotToCard[j] == cardsShouldBeRemoved[i]){
                         table.removeCard(j);
+                        cardsShouldBeRemoved[i] = null;
                     }
                 }
             }
+
         }
     }
 
@@ -156,9 +179,8 @@ public class Dealer implements Runnable {
      * Sleep for a fixed amount of time or until the thread is awakened for some purpose.
      */
     private void sleepUntilWokenOrTimeout() {
-        // TODO implement
         try {
-            Thread.sleep(env.config.turnTimeoutMillis);
+            this.dealerThread.sleep(2000);
         } catch (InterruptedException ignored) {
         }
 
@@ -168,23 +190,38 @@ public class Dealer implements Runnable {
      * Reset and/or update the countdown and the countdown display.
      */
     private void updateTimerDisplay(boolean reset) {
-        // TODO implement
-            env.ui.setCountdown(env.config.turnTimeoutMillis, reset);
+        if(reset && !shouldFinish()){
+            reshuffleTime = System.currentTimeMillis() + env.config.turnTimeoutMillis;
+            env.ui.setCountdown(reshuffleTime - System.currentTimeMillis(),false);
+        }
+        else if(!shouldFinish()){
+            env.ui.setCountdown(env.config.turnTimeoutMillis, false);
+        }
+        else{
+            env.ui.setCountdown(env.config.turnTimeoutWarningMillis, true);
+        }
+
     }
 
     /**
      * Returns all the cards from the table to the deck.
      */
     private void removeAllCardsFromTable() {
-        // TODO implement
-        if(table.countCards() != 0){
-            for(int i = 0; i < env.config.tableSize; i++){
-                if(table.slotToCard[i] != null){
-                    deck.add(table.slotToCard[i]);
-                table.removeCard(i);
+        synchronized(table){
+            if(table.countCards() != 0){
+                for(int i = 0; i < env.config.tableSize; i++){
+                    if(table.slotToCard[i] != null){
+                        deck.add(table.slotToCard[i]);
+                        table.removeCard(i);
+                    }
                 }
+                for(Player player : players){
+                    player.resetTokens();;
+                }
+        
             }
         }
+
         
     }
 

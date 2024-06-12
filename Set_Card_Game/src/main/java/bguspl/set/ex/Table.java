@@ -2,6 +2,7 @@ package bguspl.set.ex;
 
 import bguspl.set.Env;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -33,6 +34,7 @@ public class Table {
      * Mapping between a slot and the id of the player whose token is placed in it (null if none).
      */
     public Integer[][] tokens; // token per slot (if any)
+
 
     /**
      * Constructor for testing.
@@ -95,16 +97,14 @@ public class Table {
      * @post - the card placed is on the table, in the assigned slot.
      */
     public void placeCard(int card, int slot) {
-        synchronized(this){
             try {
                 Thread.sleep(env.config.tableDelayMillis);
             } catch (InterruptedException ignored) {}
     
             cardToSlot[card] = slot;
             slotToCard[slot] = card;
-            env.ui.placeCard(slot, card);
+            env.ui.placeCard(card, slot);
 
-        }
 
     }
 
@@ -113,13 +113,13 @@ public class Table {
      * @param slot - the slot from which to remove the card.
      */
     public void removeCard(int slot) {
-        synchronized(this){
+        // synchronized(this){
             try {
                 Thread.sleep(env.config.tableDelayMillis);
             } catch (InterruptedException ignored) {}
             slotToCard[slot] = null;
             env.ui.removeCard(slot);
-        }
+        // }
         
     }
 
@@ -129,7 +129,7 @@ public class Table {
      * @param slot   - the slot on which to place the token.
      */
     public void placeToken(int player, int slot) {
-        synchronized(this){
+        // synchronized(this){
             if(slotToCard[slot] != null){
                 boolean placed =false;
                 for(int i=0; placed == false && i<env.config.players; i++){
@@ -147,7 +147,7 @@ public class Table {
             return;
              }
 
-              }
+            //   }
     }
 
     /**
@@ -157,7 +157,7 @@ public class Table {
      * @return       - true iff a token was successfully removed.
      */
     public boolean removeToken(int player, int slot) {
-        synchronized(this){
+        // synchronized(this){
             if(slotToCard[slot] != null){
                 for(int i=0; i<env.config.players; i++){
                     if(tokens[slot][i] == player){
@@ -167,7 +167,19 @@ public class Table {
                 }
             }
             return false;
-        }
+        // }
 
     }
+
+    public List<Integer> getCardOnTabele(){
+        List<Integer> cardsOnTable = new ArrayList<>();
+        if(countCards() != 0){
+            for(int i = 0; i < slotToCard.length; i++){
+                if(slotToCard[i] != null)
+                    cardsOnTable.add(slotToCard[i]);
+            }
+        }
+        return cardsOnTable;
+    }
+
 }

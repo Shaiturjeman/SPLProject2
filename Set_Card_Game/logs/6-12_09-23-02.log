@@ -1,0 +1,68 @@
+[09:23:02.034] [INFO   ] thread main starting.
+[09:23:02.041] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[09:23:02.043] [SEVERE ] configuration file was loaded from resources directory.
+[09:23:02.637] [INFO   ] thread dealer starting.
+[09:23:16.808] [INFO   ] thread playerID: 0 starting.
+[09:24:30.776] [INFO   ] thread playerID: 1 starting.
+[09:24:54.371] [INFO   ] thread dealer starting.
+[09:24:54.422] [SEVERE ] updating countdown to 60000
+[09:25:02.412] [SEVERE ] placing card 37 in slot 6
+[09:25:03.118] [SEVERE ] placing card 23 in slot 10
+[09:25:03.874] [SEVERE ] placing card 70 in slot 3
+[09:25:09.178] [SEVERE ] placing card 46 in slot 11
+[09:25:09.305] [SEVERE ] placing card 66 in slot 2
+[09:25:09.454] [SEVERE ] placing card 55 in slot 5
+[09:25:09.563] [SEVERE ] placing card 62 in slot 1
+[09:25:09.670] [SEVERE ] placing card 17 in slot 4
+[09:25:09.779] [SEVERE ] placing card 5 in slot 7
+[09:25:09.884] [SEVERE ] placing card 49 in slot 9
+[09:25:09.993] [SEVERE ] placing card 44 in slot 0
+[09:25:10.107] [SEVERE ] placing card 10 in slot 8
+[09:25:15.329] [SEVERE ] updating countdown to 60000
+[09:25:17.364] [SEVERE ] updating countdown to 60000
+[09:25:19.397] [SEVERE ] updating countdown to 60000
+[09:25:21.435] [SEVERE ] updating countdown to 60000
+[09:25:23.485] [SEVERE ] updating countdown to 60000
+[09:25:25.521] [SEVERE ] updating countdown to 60000
+[09:25:27.552] [SEVERE ] updating countdown to 60000
+[09:25:29.589] [SEVERE ] updating countdown to 60000
+[09:25:31.628] [SEVERE ] updating countdown to 60000
+[09:25:33.658] [SEVERE ] updating countdown to 60000
+[09:25:35.689] [SEVERE ] updating countdown to 60000
+[09:25:37.725] [SEVERE ] updating countdown to 60000
+[09:25:39.755] [SEVERE ] updating countdown to 60000
+[09:25:41.790] [SEVERE ] updating countdown to 60000
+[09:25:43.824] [SEVERE ] updating countdown to 60000
+[09:25:45.862] [SEVERE ] updating countdown to 60000
+[09:25:47.893] [SEVERE ] updating countdown to 60000
+[09:25:49.933] [SEVERE ] updating countdown to 60000
+[09:25:51.966] [SEVERE ] updating countdown to 60000
+[09:25:54.003] [SEVERE ] updating countdown to 60000
+[09:25:56.035] [SEVERE ] updating countdown to 60000
+[09:25:56.062] [SEVERE ] updating countdown to 60000
+[09:25:56.168] [SEVERE ] removing card from slot 0
+[09:25:56.272] [SEVERE ] removing card from slot 1
+[09:25:56.376] [SEVERE ] removing card from slot 2
+[09:25:56.480] [SEVERE ] removing card from slot 3
+[09:25:56.586] [SEVERE ] removing card from slot 4
+[09:25:56.691] [SEVERE ] removing card from slot 5
+[09:25:56.799] [SEVERE ] removing card from slot 6
+[09:25:56.907] [SEVERE ] removing card from slot 7
+[09:25:57.012] [SEVERE ] removing card from slot 8
+[09:25:57.116] [SEVERE ] removing card from slot 9
+[09:25:57.227] [SEVERE ] removing card from slot 10
+[09:25:57.335] [SEVERE ] removing card from slot 11
+[09:25:57.361] [SEVERE ] updating countdown to 60000
+[09:25:57.471] [SEVERE ] placing card 44 in slot 3
+[09:25:57.580] [SEVERE ] placing card 68 in slot 9
+[09:25:57.689] [SEVERE ] placing card 79 in slot 4
+[09:25:57.796] [SEVERE ] placing card 21 in slot 5
+[09:25:57.902] [SEVERE ] placing card 10 in slot 0
+[09:25:58.010] [SEVERE ] placing card 17 in slot 1
+[09:25:58.117] [SEVERE ] placing card 49 in slot 8
+[09:25:58.225] [SEVERE ] placing card 64 in slot 2
+[09:25:58.332] [SEVERE ] placing card 9 in slot 7
+[09:25:58.437] [SEVERE ] placing card 77 in slot 10
+[09:25:58.542] [SEVERE ] placing card 54 in slot 6
+[09:25:58.644] [SEVERE ] placing card 33 in slot 11
+[09:26:00.666] [SEVERE ] updating countdown to 60000

@@ -1,0 +1,43 @@
+[07:54:54.403] [INFO   ] thread main starting.
+[07:54:54.412] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[07:54:54.416] [SEVERE ] configuration file was loaded from resources directory.
+[07:54:54.900] [INFO   ] thread dealer starting.
+[07:54:54.902] [INFO   ] thread playerID: 0 starting.
+[07:54:54.902] [INFO   ] thread playerID: 1 starting.
+[07:54:54.902] [INFO   ] thread dealer starting.
+[07:54:55.025] [SEVERE ] placing card 43 in slot 8
+[07:54:55.126] [SEVERE ] placing card 17 in slot 4
+[07:54:55.229] [SEVERE ] placing card 47 in slot 7
+[07:54:55.331] [SEVERE ] placing card 1 in slot 5
+[07:54:55.434] [SEVERE ] placing card 33 in slot 0
+[07:54:55.537] [SEVERE ] placing card 25 in slot 1
+[07:54:55.638] [SEVERE ] placing card 56 in slot 3
+[07:54:55.740] [SEVERE ] placing card 48 in slot 6
+[07:54:55.842] [SEVERE ] placing card 16 in slot 2
+[07:54:55.944] [SEVERE ] placing card 28 in slot 10
+[07:54:56.047] [SEVERE ] placing card 9 in slot 9
+[07:54:56.149] [SEVERE ] placing card 62 in slot 11
+[07:55:15.480] [SEVERE ] exit button pressed
+[07:55:15.481] [SEVERE ] disposing of user interface elements
+[07:55:15.482] [INFO   ] thread playerID: 1 terminated.
+[07:55:15.482] [INFO   ] thread playerID: 0 terminated.
+[07:55:56.150] [SEVERE ] updating countdown to 60000
+[07:55:56.153] [SEVERE ] updating countdown to 60000
+[07:55:56.257] [SEVERE ] removing card from slot 0
+[07:55:56.361] [SEVERE ] removing card from slot 1
+[07:55:56.467] [SEVERE ] removing card from slot 2
+[07:55:56.568] [SEVERE ] removing card from slot 3
+[07:55:56.672] [SEVERE ] removing card from slot 4
+[07:55:56.774] [SEVERE ] removing card from slot 5
+[07:55:56.875] [SEVERE ] removing card from slot 6
+[07:55:56.978] [SEVERE ] removing card from slot 7
+[07:55:57.082] [SEVERE ] removing card from slot 8
+[07:55:57.186] [SEVERE ] removing card from slot 9
+[07:55:57.287] [SEVERE ] removing card from slot 10
+[07:55:57.388] [SEVERE ] removing card from slot 11
+[07:55:57.389] [SEVERE ] player 1 placing token on slot 0
+[07:55:57.390] [SEVERE ] player 2 placing token on slot 1
+[07:55:57.391] [INFO   ] thread dealer terminated.
+[07:55:57.391] [INFO   ] thread dealer terminated.
+[07:55:57.392] [SEVERE ] thanks for playing... it was fun!
+[07:55:57.392] [INFO   ] thread main terminated.

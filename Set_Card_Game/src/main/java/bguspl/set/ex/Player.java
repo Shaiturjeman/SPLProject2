@@ -87,6 +87,7 @@ public class Player implements Runnable {
         {
             playerTokens[i] = null;
         }
+        TokensCounter = 0;
     }
 
     /**
@@ -133,6 +134,32 @@ public class Player implements Runnable {
         } 
         if (!human) try { aiThread.join(); } catch (InterruptedException ignored) {}
         env.logger.info("thread " + Thread.currentThread().getName() + " terminated.");
+        // playerThread = Thread.currentThread();
+        // env.logger.info("thread " + Thread.currentThread().getName() + " starting.");
+        // if (!human) createArtificialIntelligence();
+
+        // while (!terminate) {
+        //     if (!actions.isEmpty()) {
+        //         int slotAction = actions.remove();
+        //         System.out.println(slotAction);
+        //         if (table.slotToCard[slotAction]!=null) {
+        //             if (hasToken(slotAction)) {
+        //                 System.out.println("has token");
+        //                 removeToken(slotAction);
+        //             }
+        //             else {
+        //                 System.out.println(" not has token");
+        //                 placeToken(slotAction);
+        //             }
+        //         } else {
+        //             System.out.println("not in if");
+        //         }
+        //     }
+        //     // TODO implement main player loop
+        // }
+        // if (!human) try { aiThread.join(); } catch (InterruptedException ignored) {}
+        // env.logger.info("thread " + Thread.currentThread().getName() + " terminated.");
+
     }
 
 
@@ -217,12 +244,14 @@ public class Player implements Runnable {
         {
             try 
             {
-                moves.put(slot);
+                synchronized(moves){
+                    moves.put(slot);
+                    moves.notifyAll();
+
+                }
+                
             } 
-            catch (InterruptedException ignored) 
-            {
-                Thread.currentThread().interrupt();
-            }
+            catch (InterruptedException ignored) {}
         }
         
 
@@ -284,5 +313,13 @@ public class Player implements Runnable {
                 return true;
         }
         return false;
+    }
+
+    public void resetTokens(){
+        for(int i = 0; i < env.config.featureSize; i++)
+        {
+            playerTokens[i] = null;
+        }
+        TokensCounter = 0;
     }
 }

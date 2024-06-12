@@ -1,0 +1,43 @@
+[09:38:38.174] [INFO   ] thread main starting.
+[09:38:38.182] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[09:38:38.184] [SEVERE ] configuration file was loaded from resources directory.
+[09:38:38.672] [INFO   ] thread dealer starting.
+[09:38:38.673] [INFO   ] thread playerID: 0 starting.
+[09:38:38.674] [INFO   ] thread dealer starting.
+[09:38:38.674] [INFO   ] thread playerID: 1 starting.
+[09:38:38.680] [SEVERE ] updating countdown to 60000
+[09:38:38.785] [SEVERE ] placing card 21 in slot 6
+[09:38:38.897] [SEVERE ] placing card 59 in slot 11
+[09:38:39.004] [SEVERE ] placing card 1 in slot 5
+[09:38:39.108] [SEVERE ] placing card 80 in slot 4
+[09:38:39.211] [SEVERE ] placing card 12 in slot 7
+[09:38:39.316] [SEVERE ] placing card 6 in slot 10
+[09:38:39.418] [SEVERE ] placing card 64 in slot 8
+[09:38:39.525] [SEVERE ] placing card 68 in slot 1
+[09:38:39.628] [SEVERE ] placing card 34 in slot 3
+[09:38:39.732] [SEVERE ] placing card 43 in slot 0
+[09:38:39.833] [SEVERE ] placing card 41 in slot 2
+[09:38:39.935] [SEVERE ] placing card 46 in slot 9
+[09:38:41.937] [SEVERE ] updating countdown to 60000
+[09:38:43.939] [SEVERE ] updating countdown to 60000
+[09:38:45.942] [SEVERE ] updating countdown to 60000
+[09:38:47.946] [SEVERE ] updating countdown to 60000
+[09:38:49.954] [SEVERE ] updating countdown to 60000
+[09:38:51.975] [SEVERE ] updating countdown to 60000
+[09:38:53.977] [SEVERE ] updating countdown to 60000
+[09:38:55.979] [SEVERE ] updating countdown to 60000
+[09:38:57.982] [SEVERE ] updating countdown to 60000
+[09:38:59.985] [SEVERE ] updating countdown to 60000
+[09:39:01.991] [SEVERE ] updating countdown to 60000
+[09:39:03.995] [SEVERE ] updating countdown to 60000
+[09:39:06.002] [SEVERE ] updating countdown to 60000
+[09:39:08.012] [SEVERE ] updating countdown to 60000
+[09:39:10.018] [SEVERE ] updating countdown to 60000
+[09:39:12.023] [SEVERE ] updating countdown to 60000
+[09:39:14.029] [SEVERE ] updating countdown to 60000
+[09:39:16.036] [SEVERE ] updating countdown to 60000
+[09:39:18.043] [SEVERE ] updating countdown to 60000
+[09:39:20.049] [SEVERE ] updating countdown to 60000
+[09:39:22.051] [SEVERE ] updating countdown to 60000
+[09:39:24.059] [SEVERE ] updating countdown to 60000
+[09:39:26.064] [SEVERE ] updating countdown to 60000
