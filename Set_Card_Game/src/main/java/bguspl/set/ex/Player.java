@@ -134,31 +134,6 @@ public class Player implements Runnable {
         } 
         if (!human) try { aiThread.join(); } catch (InterruptedException ignored) {}
         env.logger.info("thread " + Thread.currentThread().getName() + " terminated.");
-        // playerThread = Thread.currentThread();
-        // env.logger.info("thread " + Thread.currentThread().getName() + " starting.");
-        // if (!human) createArtificialIntelligence();
-
-        // while (!terminate) {
-        //     if (!actions.isEmpty()) {
-        //         int slotAction = actions.remove();
-        //         System.out.println(slotAction);
-        //         if (table.slotToCard[slotAction]!=null) {
-        //             if (hasToken(slotAction)) {
-        //                 System.out.println("has token");
-        //                 removeToken(slotAction);
-        //             }
-        //             else {
-        //                 System.out.println(" not has token");
-        //                 placeToken(slotAction);
-        //             }
-        //         } else {
-        //             System.out.println("not in if");
-        //         }
-        //     }
-        //     // TODO implement main player loop
-        // }
-        // if (!human) try { aiThread.join(); } catch (InterruptedException ignored) {}
-        // env.logger.info("thread " + Thread.currentThread().getName() + " terminated.");
 
     }
 
