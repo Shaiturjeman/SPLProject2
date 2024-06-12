@@ -85,7 +85,7 @@ public class Player implements Runnable {
         this.playerTokens = new Integer[env.config.featureSize];
         for(int i=0; i < env.config.featureSize; i++)
         {
-            playerTokens[i] = null;
+            playerTokens[i] = -1;
         }
         this.TokensCounter = 0;
         this.dealer = dealer;
@@ -104,33 +104,13 @@ public class Player implements Runnable {
             if(!moves.isEmpty()){
                 int slot = moves.poll();
                 if(table.slotToCard[slot]!=null){
-                    table.placeToken(this.id, slot);
-                    if(TokenPlaced(slot))
-                    {
-                        TokensCounter++;
-                        playerTokens[TokensCounter] = table.slotToCard[slot];
-                        if(TokensCounter == env.config.featureSize - 1){
-                            boolean isSet = dealer.SetCheck(playerTokens);
-                            if(isSet)
-                            {
-                                point();
-                            }
-                            else
-                            {
-                                penalty();
-                            }
-                        }
-
+                    if(TokenPlaced(slot)){
+                        removeTheToken(slot);
                     }
                     else{
-                        TokensCounter--;
-                        for(Integer t: playerTokens)
-                            if(t == table.slotToCard[slot])
-                                t = null;
+                        tokenPlaceAndCheck(slot);
                     }
-
                 }
-
             }
         } 
         if (!human) try { aiThread.join(); } catch (InterruptedException ignored) {}
@@ -249,6 +229,8 @@ public class Player implements Runnable {
         env.ui.setScore(id, score);
 
         //freeze the player for marking a legal set.
+        resetTokens();
+        moves.clear();
         env.ui.setFreeze(id, env.config.pointFreezeMillis);
     }
 
@@ -270,6 +252,8 @@ public class Player implements Runnable {
         }
 
         //unfreeze the player when the penalty is over.
+        moves.clear();
+        resetTokens();
         env.ui.setFreeze(id, 0);
 
     }
@@ -277,11 +261,11 @@ public class Player implements Runnable {
     public int score() {
         return score;
     }
-
+    // Check if the game should be terminated
     public boolean getTerminate() {
         return terminate;
     }
-
+    // Check if the token is  already placed on the table
     public boolean TokenPlaced(int slot) {
         for(int i =0; i < env.config.players; i++)
         {
@@ -292,11 +276,44 @@ public class Player implements Runnable {
         }
         return false;
     }
+    // Remove the token from the table
+    public void removeTheToken(int slot) {
+        boolean done = this.table.removeToken(this.id, slot);
+        for(int i=0 ; i<playerTokens.length; i++)
+            if(playerTokens[i] == table.slotToCard[slot])
+                playerTokens[i] = -1;
+        if(done)    
+            TokensCounter--;
+    }
+    // Place a token on the table and check if a set is formed
+    public void tokenPlaceAndCheck(int slot) {
+        if(TokensCounter < env.config.featureSize)
+        {
+            this.table.placeToken(this.id, slot);
+            TokensCounter++;
+            int i=0;
+            while(playerTokens[i] != -1)
+                i++;
+            playerTokens[i] = table.slotToCard[slot];
 
+            if(TokensCounter == env.config.featureSize){
+                boolean legalSet = dealer.SetCheck(playerTokens);
+                if(legalSet){
+                    point();
+                }
+                else{
+                    penalty();
+                }
+
+            }
+        }
+        
+    }
+ // Reset the tokens of the player and the counter
     public void resetTokens(){
         for(int i = 0; i < env.config.featureSize; i++)
         {
-            playerTokens[i] = null;
+            playerTokens[i] = -1;
         }
         TokensCounter = 0;
     }

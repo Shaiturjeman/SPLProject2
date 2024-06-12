@@ -99,14 +99,14 @@ public class Dealer implements Runnable {
             removeCardsFromTable();
             placeCardsOnTable();
 
-            // if(table.countCards()!= 0 && !deck.isEmpty()){
-            //     List<Integer> cardsOnTable = table.getCardOnTabele();
-            //     if(env.util.findSets(cardsOnTable, 1).size() == 0){
-            //         removeAllCardsFromTable();
-            //         placeCardsOnTable();
-            //         updateTimerDisplay(true);
-            //     }
-            // }
+            if(table.countCards()!= 0 && !deck.isEmpty()){
+                List<Integer> cardsOnTable = table.getCardOnTabele();
+                if(env.util.findSets(cardsOnTable, 1).size() == 0){
+                    removeAllCardsFromTable();
+                    placeCardsOnTable();
+                    updateTimerDisplay(true);
+                }
+            }
             
              if(deck.isEmpty() && table.countCards() != 0){
                 List<Integer> cardsOnTable = table.getCardOnTabele();
@@ -180,7 +180,7 @@ public class Dealer implements Runnable {
      */
     private void sleepUntilWokenOrTimeout() {
         try {
-            this.dealerThread.sleep(2000);
+            this.dealerThread.sleep(20);
         } catch (InterruptedException ignored) {
         }
 
@@ -252,7 +252,13 @@ public class Dealer implements Runnable {
     public boolean SetCheck(Integer[] cards){
         int[] cardsCopy = new int[cards.length];
         for(int i = 0; i < cards.length; i++){
-            cardsCopy[i] = cards[i];
+            if(cards[i] != null){
+                cardsCopy[i] = cards[i];
+            }
+            else if(cards[i] == null){
+                cardsCopy[i] = -1;
+            }
+            
         }
         if(env.util.testSet(cardsCopy)){
             cardsShouldBeRemoved = cards;

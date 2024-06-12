@@ -1,0 +1,421 @@
+[14:15:35.160] [INFO   ] thread main starting.
+[14:15:35.166] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[14:15:35.168] [SEVERE ] configuration file was loaded from resources directory.
+[14:15:35.649] [INFO   ] thread dealer starting.
+[14:15:35.651] [INFO   ] thread dealer starting.
+[14:15:35.652] [INFO   ] thread playerID: 1 starting.
+[14:15:35.651] [INFO   ] thread playerID: 0 starting.
+[14:15:35.661] [SEVERE ] updating countdown to 60000
+[14:15:35.775] [SEVERE ] placing card 69 in slot 6
+[14:15:36.108] [SEVERE ] placing card 54 in slot 7
+[14:15:36.211] [SEVERE ] placing card 0 in slot 9
+[14:15:36.314] [SEVERE ] placing card 71 in slot 2
+[14:15:36.416] [SEVERE ] placing card 29 in slot 8
+[14:15:36.517] [SEVERE ] placing card 66 in slot 0
+[14:15:36.620] [SEVERE ] placing card 48 in slot 10
+[14:15:36.721] [SEVERE ] placing card 79 in slot 4
+[14:15:36.823] [SEVERE ] placing card 7 in slot 11
+[14:15:36.925] [SEVERE ] placing card 67 in slot 3
+[14:15:37.027] [SEVERE ] placing card 59 in slot 5
+[14:15:37.128] [SEVERE ] placing card 28 in slot 1
+[14:15:37.153] [SEVERE ] updating countdown to 60000
+[14:15:37.178] [SEVERE ] updating countdown to 60000
+[14:15:37.202] [SEVERE ] updating countdown to 60000
+[14:15:37.232] [SEVERE ] updating countdown to 60000
+[14:15:37.255] [SEVERE ] updating countdown to 60000
+[14:15:37.276] [SEVERE ] updating countdown to 60000
+[14:15:37.300] [SEVERE ] updating countdown to 60000
+[14:15:37.323] [SEVERE ] updating countdown to 60000
+[14:15:37.345] [SEVERE ] updating countdown to 60000
+[14:15:37.368] [SEVERE ] updating countdown to 60000
+[14:15:37.390] [SEVERE ] updating countdown to 60000
+[14:15:37.413] [SEVERE ] updating countdown to 60000
+[14:15:37.436] [SEVERE ] updating countdown to 60000
+[14:15:37.463] [SEVERE ] updating countdown to 60000
+[14:15:37.486] [SEVERE ] updating countdown to 60000
+[14:15:37.513] [SEVERE ] updating countdown to 60000
+[14:15:37.538] [SEVERE ] updating countdown to 60000
+[14:15:37.562] [SEVERE ] updating countdown to 60000
+[14:15:37.586] [SEVERE ] updating countdown to 60000
+[14:15:37.609] [SEVERE ] updating countdown to 60000
+[14:15:37.639] [SEVERE ] updating countdown to 60000
+[14:15:37.663] [SEVERE ] updating countdown to 60000
+[14:15:37.684] [SEVERE ] updating countdown to 60000
+[14:15:37.710] [SEVERE ] updating countdown to 60000
+[14:15:37.738] [SEVERE ] updating countdown to 60000
+[14:15:37.761] [SEVERE ] updating countdown to 60000
+[14:15:37.787] [SEVERE ] updating countdown to 60000
+[14:15:37.814] [SEVERE ] updating countdown to 60000
+[14:15:37.835] [SEVERE ] updating countdown to 60000
+[14:15:37.857] [SEVERE ] updating countdown to 60000
+[14:15:37.881] [SEVERE ] updating countdown to 60000
+[14:15:37.903] [SEVERE ] updating countdown to 60000
+[14:15:37.928] [SEVERE ] updating countdown to 60000
+[14:15:37.950] [SEVERE ] updating countdown to 60000
+[14:15:37.972] [SEVERE ] updating countdown to 60000
+[14:15:37.995] [SEVERE ] updating countdown to 60000
+[14:15:38.017] [SEVERE ] updating countdown to 60000
+[14:15:38.040] [SEVERE ] updating countdown to 60000
+[14:15:38.061] [SEVERE ] updating countdown to 60000
+[14:15:38.082] [SEVERE ] updating countdown to 60000
+[14:15:38.104] [SEVERE ] updating countdown to 60000
+[14:15:38.126] [SEVERE ] updating countdown to 60000
+[14:15:38.147] [SEVERE ] updating countdown to 60000
+[14:15:38.168] [SEVERE ] updating countdown to 60000
+[14:15:38.192] [SEVERE ] updating countdown to 60000
+[14:15:38.216] [SEVERE ] updating countdown to 60000
+[14:15:38.238] [SEVERE ] updating countdown to 60000
+[14:15:38.262] [SEVERE ] updating countdown to 60000
+[14:15:38.285] [SEVERE ] updating countdown to 60000
+[14:15:38.308] [SEVERE ] updating countdown to 60000
+[14:15:38.329] [SEVERE ] updating countdown to 60000
+[14:15:38.351] [SEVERE ] updating countdown to 60000
+[14:15:38.373] [SEVERE ] updating countdown to 60000
+[14:15:38.396] [SEVERE ] updating countdown to 60000
+[14:15:38.418] [SEVERE ] updating countdown to 60000
+[14:15:38.441] [SEVERE ] updating countdown to 60000
+[14:15:38.466] [SEVERE ] updating countdown to 60000
+[14:15:38.488] [SEVERE ] updating countdown to 60000
+[14:15:38.511] [SEVERE ] updating countdown to 60000
+[14:15:38.532] [SEVERE ] updating countdown to 60000
+[14:15:38.553] [SEVERE ] updating countdown to 60000
+[14:15:38.575] [SEVERE ] updating countdown to 60000
+[14:15:38.598] [SEVERE ] updating countdown to 60000
+[14:15:38.620] [SEVERE ] updating countdown to 60000
+[14:15:38.648] [SEVERE ] updating countdown to 60000
+[14:15:38.680] [SEVERE ] updating countdown to 60000
+[14:15:38.705] [SEVERE ] updating countdown to 60000
+[14:15:38.737] [SEVERE ] updating countdown to 60000
+[14:15:38.761] [SEVERE ] updating countdown to 60000
+[14:15:38.782] [SEVERE ] updating countdown to 60000
+[14:15:38.804] [SEVERE ] updating countdown to 60000
+[14:15:38.826] [SEVERE ] updating countdown to 60000
+[14:15:38.848] [SEVERE ] updating countdown to 60000
+[14:15:38.869] [SEVERE ] updating countdown to 60000
+[14:15:38.891] [SEVERE ] updating countdown to 60000
+[14:15:38.912] [SEVERE ] updating countdown to 60000
+[14:15:38.933] [SEVERE ] updating countdown to 60000
+[14:15:38.954] [SEVERE ] updating countdown to 60000
+[14:15:38.976] [SEVERE ] updating countdown to 60000
+[14:15:38.998] [SEVERE ] updating countdown to 60000
+[14:15:39.020] [SEVERE ] updating countdown to 60000
+[14:15:39.061] [SEVERE ] updating countdown to 60000
+[14:15:39.084] [SEVERE ] updating countdown to 60000
+[14:15:39.112] [SEVERE ] updating countdown to 60000
+[14:15:39.139] [SEVERE ] updating countdown to 60000
+[14:15:39.162] [SEVERE ] updating countdown to 60000
+[14:15:39.184] [SEVERE ] updating countdown to 60000
+[14:15:39.209] [SEVERE ] updating countdown to 60000
+[14:15:39.237] [SEVERE ] updating countdown to 60000
+[14:15:39.264] [SEVERE ] updating countdown to 60000
+[14:15:39.285] [SEVERE ] updating countdown to 60000
+[14:15:39.306] [SEVERE ] updating countdown to 60000
+[14:15:39.329] [SEVERE ] updating countdown to 60000
+[14:15:39.351] [SEVERE ] updating countdown to 60000
+[14:15:39.372] [SEVERE ] updating countdown to 60000
+[14:15:39.395] [SEVERE ] updating countdown to 60000
+[14:15:39.419] [SEVERE ] updating countdown to 60000
+[14:15:39.442] [SEVERE ] updating countdown to 60000
+[14:15:39.469] [SEVERE ] updating countdown to 60000
+[14:15:39.491] [SEVERE ] updating countdown to 60000
+[14:15:39.517] [SEVERE ] updating countdown to 60000
+[14:15:39.538] [SEVERE ] updating countdown to 60000
+[14:15:39.563] [SEVERE ] updating countdown to 60000
+[14:15:39.587] [SEVERE ] updating countdown to 60000
+[14:15:39.610] [SEVERE ] updating countdown to 60000
+[14:15:39.631] [SEVERE ] updating countdown to 60000
+[14:15:39.653] [SEVERE ] updating countdown to 60000
+[14:15:39.676] [SEVERE ] updating countdown to 60000
+[14:15:39.700] [SEVERE ] updating countdown to 60000
+[14:15:39.721] [SEVERE ] updating countdown to 60000
+[14:15:39.743] [SEVERE ] updating countdown to 60000
+[14:15:39.765] [SEVERE ] updating countdown to 60000
+[14:15:39.786] [SEVERE ] updating countdown to 60000
+[14:15:39.809] [SEVERE ] updating countdown to 60000
+[14:15:39.831] [SEVERE ] updating countdown to 60000
+[14:15:39.854] [SEVERE ] updating countdown to 60000
+[14:15:39.874] [SEVERE ] updating countdown to 60000
+[14:15:39.895] [SEVERE ] updating countdown to 60000
+[14:15:39.916] [SEVERE ] updating countdown to 60000
+[14:15:39.939] [SEVERE ] updating countdown to 60000
+[14:15:39.962] [SEVERE ] updating countdown to 60000
+[14:15:39.984] [SEVERE ] updating countdown to 60000
+[14:15:40.005] [SEVERE ] updating countdown to 60000
+[14:15:40.028] [SEVERE ] updating countdown to 60000
+[14:15:40.052] [SEVERE ] updating countdown to 60000
+[14:15:40.076] [SEVERE ] updating countdown to 60000
+[14:15:40.097] [SEVERE ] updating countdown to 60000
+[14:15:40.119] [SEVERE ] updating countdown to 60000
+[14:15:40.140] [SEVERE ] updating countdown to 60000
+[14:15:40.161] [SEVERE ] updating countdown to 60000
+[14:15:40.184] [SEVERE ] updating countdown to 60000
+[14:15:40.206] [SEVERE ] updating countdown to 60000
+[14:15:40.228] [SEVERE ] updating countdown to 60000
+[14:15:40.249] [SEVERE ] updating countdown to 60000
+[14:15:40.272] [SEVERE ] updating countdown to 60000
+[14:15:40.294] [SEVERE ] updating countdown to 60000
+[14:15:40.317] [SEVERE ] updating countdown to 60000
+[14:15:40.385] [SEVERE ] updating countdown to 60000
+[14:15:40.406] [SEVERE ] updating countdown to 60000
+[14:15:40.430] [SEVERE ] updating countdown to 60000
+[14:15:40.452] [SEVERE ] updating countdown to 60000
+[14:15:40.474] [SEVERE ] updating countdown to 60000
+[14:15:40.497] [SEVERE ] updating countdown to 60000
+[14:15:40.518] [SEVERE ] updating countdown to 60000
+[14:15:40.539] [SEVERE ] updating countdown to 60000
+[14:15:40.562] [SEVERE ] updating countdown to 60000
+[14:15:40.584] [SEVERE ] updating countdown to 60000
+[14:15:40.608] [SEVERE ] updating countdown to 60000
+[14:15:40.629] [SEVERE ] updating countdown to 60000
+[14:15:40.652] [SEVERE ] updating countdown to 60000
+[14:15:40.675] [SEVERE ] updating countdown to 60000
+[14:15:40.696] [SEVERE ] updating countdown to 60000
+[14:15:40.719] [SEVERE ] updating countdown to 60000
+[14:15:40.748] [SEVERE ] updating countdown to 60000
+[14:15:40.770] [SEVERE ] updating countdown to 60000
+[14:15:40.793] [SEVERE ] updating countdown to 60000
+[14:15:40.817] [SEVERE ] updating countdown to 60000
+[14:15:40.838] [SEVERE ] updating countdown to 60000
+[14:15:40.861] [SEVERE ] updating countdown to 60000
+[14:15:40.882] [SEVERE ] updating countdown to 60000
+[14:15:40.903] [SEVERE ] updating countdown to 60000
+[14:15:40.925] [SEVERE ] updating countdown to 60000
+[14:15:40.947] [SEVERE ] updating countdown to 60000
+[14:15:40.972] [SEVERE ] updating countdown to 60000
+[14:15:40.993] [SEVERE ] updating countdown to 60000
+[14:15:41.016] [SEVERE ] updating countdown to 60000
+[14:15:41.039] [SEVERE ] updating countdown to 60000
+[14:15:41.061] [SEVERE ] updating countdown to 60000
+[14:15:41.084] [SEVERE ] updating countdown to 60000
+[14:15:41.105] [SEVERE ] updating countdown to 60000
+[14:15:41.126] [SEVERE ] updating countdown to 60000
+[14:15:41.149] [SEVERE ] updating countdown to 60000
+[14:15:41.180] [SEVERE ] updating countdown to 60000
+[14:15:41.206] [SEVERE ] updating countdown to 60000
+[14:15:41.239] [SEVERE ] updating countdown to 60000
+[14:15:41.262] [SEVERE ] updating countdown to 60000
+[14:15:41.285] [SEVERE ] updating countdown to 60000
+[14:15:41.311] [SEVERE ] updating countdown to 60000
+[14:15:41.334] [SEVERE ] updating countdown to 60000
+[14:15:41.355] [SEVERE ] updating countdown to 60000
+[14:15:41.377] [SEVERE ] updating countdown to 60000
+[14:15:41.399] [SEVERE ] updating countdown to 60000
+[14:15:41.423] [SEVERE ] updating countdown to 60000
+[14:15:41.450] [SEVERE ] updating countdown to 60000
+[14:15:41.471] [SEVERE ] updating countdown to 60000
+[14:15:41.497] [SEVERE ] updating countdown to 60000
+[14:15:41.520] [SEVERE ] updating countdown to 60000
+[14:15:41.542] [SEVERE ] updating countdown to 60000
+[14:15:41.575] [SEVERE ] updating countdown to 60000
+[14:15:41.606] [SEVERE ] updating countdown to 60000
+[14:15:41.633] [SEVERE ] updating countdown to 60000
+[14:15:41.658] [SEVERE ] updating countdown to 60000
+[14:15:41.685] [SEVERE ] updating countdown to 60000
+[14:15:41.706] [SEVERE ] updating countdown to 60000
+[14:15:41.733] [SEVERE ] updating countdown to 60000
+[14:15:41.755] [SEVERE ] updating countdown to 60000
+[14:15:41.777] [SEVERE ] updating countdown to 60000
+[14:15:41.803] [SEVERE ] updating countdown to 60000
+[14:15:41.824] [SEVERE ] updating countdown to 60000
+[14:15:41.849] [SEVERE ] updating countdown to 60000
+[14:15:41.875] [SEVERE ] updating countdown to 60000
+[14:15:41.896] [SEVERE ] updating countdown to 60000
+[14:15:41.917] [SEVERE ] updating countdown to 60000
+[14:15:41.940] [SEVERE ] updating countdown to 60000
+[14:15:41.964] [SEVERE ] updating countdown to 60000
+[14:15:41.985] [SEVERE ] updating countdown to 60000
+[14:15:42.006] [SEVERE ] updating countdown to 60000
+[14:15:42.027] [SEVERE ] updating countdown to 60000
+[14:15:42.048] [SEVERE ] updating countdown to 60000
+[14:15:42.070] [SEVERE ] updating countdown to 60000
+[14:15:42.092] [SEVERE ] updating countdown to 60000
+[14:15:42.113] [SEVERE ] updating countdown to 60000
+[14:15:42.136] [SEVERE ] updating countdown to 60000
+[14:15:42.158] [SEVERE ] updating countdown to 60000
+[14:15:42.180] [SEVERE ] updating countdown to 60000
+[14:15:42.202] [SEVERE ] updating countdown to 60000
+[14:15:42.223] [SEVERE ] updating countdown to 60000
+[14:15:42.246] [SEVERE ] updating countdown to 60000
+[14:15:42.267] [SEVERE ] updating countdown to 60000
+[14:15:42.290] [SEVERE ] updating countdown to 60000
+[14:15:42.313] [SEVERE ] updating countdown to 60000
+[14:15:42.336] [SEVERE ] updating countdown to 60000
+[14:15:42.357] [SEVERE ] updating countdown to 60000
+[14:15:42.379] [SEVERE ] updating countdown to 60000
+[14:15:42.401] [SEVERE ] updating countdown to 60000
+[14:15:42.423] [SEVERE ] updating countdown to 60000
+[14:15:42.444] [SEVERE ] updating countdown to 60000
+[14:15:42.466] [SEVERE ] updating countdown to 60000
+[14:15:42.488] [SEVERE ] updating countdown to 60000
+[14:15:42.510] [SEVERE ] updating countdown to 60000
+[14:15:42.531] [SEVERE ] updating countdown to 60000
+[14:15:42.553] [SEVERE ] updating countdown to 60000
+[14:15:42.575] [SEVERE ] updating countdown to 60000
+[14:15:42.597] [SEVERE ] updating countdown to 60000
+[14:15:42.615] [SEVERE ] exit button pressed
+[14:15:42.616] [SEVERE ] disposing of user interface elements
+[14:15:42.616] [INFO   ] thread playerID: 0 terminated.
+[14:15:42.616] [INFO   ] thread playerID: 1 terminated.
+[14:15:42.618] [SEVERE ] updating countdown to 5000
+[14:15:42.619] [SEVERE ] updating countdown to 5000
+[14:15:42.721] [SEVERE ] removing card from slot 0
+[14:15:42.822] [SEVERE ] removing card from slot 1
+[14:15:42.923] [SEVERE ] removing card from slot 2
+[14:15:43.024] [SEVERE ] removing card from slot 3
+[14:15:43.125] [SEVERE ] removing card from slot 4
+[14:15:43.226] [SEVERE ] removing card from slot 5
+[14:15:43.327] [SEVERE ] removing card from slot 6
+[14:15:43.428] [SEVERE ] removing card from slot 7
+[14:15:43.529] [SEVERE ] removing card from slot 8
+[14:15:43.630] [SEVERE ] removing card from slot 9
+[14:15:43.731] [SEVERE ] removing card from slot 10
+[14:15:43.832] [SEVERE ] removing card from slot 11
+[14:15:43.833] [SEVERE ] player 1 placing token on slot 0
+[14:15:43.833] [SEVERE ] player 2 placing token on slot 1
+[14:15:43.834] [INFO   ] thread dealer terminated.
+[14:15:43.834] [INFO   ] thread dealer terminated.
+[14:15:43.834] [SEVERE ] thanks for playing... it was fun!
+[14:15:43.834] [INFO   ] thread main terminated.
+ to 60000
+[14:15:42.840] [SEVERE ] updating countdown to 60000
+[14:15:42.861] [SEVERE ] updating countdown to 60000
+[14:15:42.881] [SEVERE ] updating countdown to 60000
+[14:15:42.902] [SEVERE ] updating countdown to 60000
+[14:15:42.923] [SEVERE ] updating countdown to 60000
+[14:15:42.945] [SEVERE ] updating countdown to 60000
+[14:15:42.968] [SEVERE ] updating countdown to 60000
+[14:15:42.990] [SEVERE ] updating countdown to 60000
+[14:15:43.012] [SEVERE ] updating countdown to 60000
+[14:15:43.033] [SEVERE ] updating countdown to 60000
+[14:15:43.055] [SEVERE ] updating countdown to 60000
+[14:15:43.076] [SEVERE ] updating countdown to 60000
+[14:15:43.098] [SEVERE ] updating countdown to 60000
+[14:15:43.119] [SEVERE ] updating countdown to 60000
+[14:15:43.141] [SEVERE ] updating countdown to 60000
+[14:15:43.161] [SEVERE ] updating countdown to 60000
+[14:15:43.182] [SEVERE ] updating countdown to 60000
+[14:15:43.204] [SEVERE ] updating countdown to 60000
+[14:15:43.228] [SEVERE ] updating countdown to 60000
+[14:15:43.251] [SEVERE ] updating countdown to 60000
+[14:15:43.273] [SEVERE ] updating countdown to 60000
+[14:15:43.295] [SEVERE ] updating countdown to 60000
+[14:15:43.316] [SEVERE ] updating countdown to 60000
+[14:15:43.338] [SEVERE ] updating countdown to 60000
+[14:15:43.359] [SEVERE ] updating countdown to 60000
+[14:15:43.381] [SEVERE ] updating countdown to 60000
+[14:15:43.403] [SEVERE ] updating countdown to 60000
+[14:15:43.425] [SEVERE ] updating countdown to 60000
+[14:15:43.447] [SEVERE ] updating countdown to 60000
+[14:15:43.467] [SEVERE ] updating countdown to 60000
+[14:15:43.488] [SEVERE ] updating countdown to 60000
+[14:15:43.509] [SEVERE ] updating countdown to 60000
+[14:15:43.531] [SEVERE ] updating countdown to 60000
+[14:15:43.552] [SEVERE ] updating countdown to 60000
+[14:15:43.573] [SEVERE ] updating countdown to 60000
+[14:15:43.595] [SEVERE ] updating countdown to 60000
+[14:15:43.617] [SEVERE ] updating countdown to 60000
+[14:15:43.639] [SEVERE ] updating countdown to 60000
+[14:15:43.660] [SEVERE ] updating countdown to 60000
+[14:15:43.684] [SEVERE ] updating countdown to 60000
+[14:15:43.705] [SEVERE ] updating countdown to 60000
+[14:15:43.726] [SEVERE ] updating countdown to 60000
+[14:15:43.751] [SEVERE ] updating countdown to 60000
+[14:15:43.773] [SEVERE ] updating countdown to 60000
+[14:15:43.794] [SEVERE ] updating countdown to 60000
+[14:15:43.815] [SEVERE ] updating countdown to 60000
+[14:15:43.836] [SEVERE ] updating countdown to 60000
+[14:15:43.858] [SEVERE ] updating countdown to 60000
+[14:15:43.880] [SEVERE ] updating countdown to 60000
+[14:15:43.902] [SEVERE ] updating countdown to 60000
+[14:15:43.924] [SEVERE ] updating countdown to 60000
+[14:15:43.947] [SEVERE ] updating countdown to 60000
+[14:15:43.968] [SEVERE ] updating countdown to 60000
+[14:15:43.989] [SEVERE ] updating countdown to 60000
+[14:15:44.011] [SEVERE ] updating countdown to 60000
+[14:15:44.032] [SEVERE ] updating countdown to 60000
+[14:15:44.055] [SEVERE ] updating countdown to 60000
+[14:15:44.077] [SEVERE ] updating countdown to 60000
+[14:15:44.098] [SEVERE ] updating countdown to 60000
+[14:15:44.119] [SEVERE ] updating countdown to 60000
+[14:15:44.140] [SEVERE ] updating countdown to 60000
+[14:15:44.164] [SEVERE ] updating countdown to 60000
+[14:15:44.185] [SEVERE ] updating countdown to 60000
+[14:15:44.207] [SEVERE ] updating countdown to 60000
+[14:15:44.229] [SEVERE ] updating countdown to 60000
+[14:15:44.254] [SEVERE ] updating countdown to 60000
+[14:15:44.276] [SEVERE ] updating countdown to 60000
+[14:15:44.298] [SEVERE ] updating countdown to 60000
+[14:15:44.320] [SEVERE ] updating countdown to 60000
+[14:15:44.342] [SEVERE ] updating countdown to 60000
+[14:15:44.363] [SEVERE ] updating countdown to 60000
+[14:15:44.384] [SEVERE ] updating countdown to 60000
+[14:15:44.407] [SEVERE ] updating countdown to 60000
+[14:15:44.429] [SEVERE ] updating countdown to 60000
+[14:15:44.455] [SEVERE ] updating countdown to 60000
+[14:15:44.478] [SEVERE ] updating countdown to 60000
+[14:15:44.503] [SEVERE ] updating countdown to 60000
+[14:15:44.524] [SEVERE ] updating countdown to 60000
+[14:15:44.548] [SEVERE ] updating countdown to 60000
+[14:15:44.570] [SEVERE ] updating countdown to 60000
+[14:15:44.592] [SEVERE ] updating countdown to 60000
+[14:15:44.616] [SEVERE ] updating countdown to 60000
+[14:15:44.638] [SEVERE ] updating countdown to 60000
+[14:15:44.661] [SEVERE ] updating countdown to 60000
+[14:15:44.682] [SEVERE ] updating countdown to 60000
+[14:15:44.704] [SEVERE ] updating countdown to 60000
+[14:15:44.725] [SEVERE ] updating countdown to 60000
+[14:15:44.750] [SEVERE ] updating countdown to 60000
+[14:15:44.775] [SEVERE ] updating countdown to 60000
+[14:15:44.796] [SEVERE ] updating countdown to 60000
+[14:15:44.818] [SEVERE ] updating countdown to 60000
+[14:15:44.843] [SEVERE ] updating countdown to 60000
+[14:15:44.867] [SEVERE ] updating countdown to 60000
+[14:15:44.891] [SEVERE ] updating countdown to 60000
+[14:15:44.917] [SEVERE ] updating countdown to 60000
+[14:15:44.941] [SEVERE ] updating countdown to 60000
+[14:15:44.962] [SEVERE ] updating countdown to 60000
+[14:15:44.988] [SEVERE ] updating countdown to 60000
+[14:15:45.010] [SEVERE ] updating countdown to 60000
+[14:15:45.031] [SEVERE ] updating countdown to 60000
+[14:15:45.053] [SEVERE ] updating countdown to 60000
+[14:15:45.076] [SEVERE ] updating countdown to 60000
+[14:15:45.101] [SEVERE ] updating countdown to 60000
+[14:15:45.122] [SEVERE ] updating countdown to 60000
+[14:15:45.143] [SEVERE ] updating countdown to 60000
+[14:15:45.165] [SEVERE ] updating countdown to 60000
+[14:15:45.186] [SEVERE ] updating countdown to 60000
+[14:15:45.208] [SEVERE ] updating countdown to 60000
+[14:15:45.229] [SEVERE ] updating countdown to 60000
+[14:15:45.250] [SEVERE ] updating countdown to 60000
+[14:15:45.272] [SEVERE ] updating countdown to 60000
+[14:15:45.295] [SEVERE ] updating countdown to 60000
+[14:15:45.316] [SEVERE ] updating countdown to 60000
+[14:15:45.337] [SEVERE ] updating countdown to 60000
+[14:15:45.359] [SEVERE ] updating countdown to 60000
+[14:15:45.380] [SEVERE ] updating countdown to 60000
+[14:15:45.401] [SEVERE ] updating countdown to 60000
+[14:15:45.423] [SEVERE ] updating countdown to 60000
+[14:15:45.425] [SEVERE ] exit button pressed
+[14:15:45.426] [SEVERE ] disposing of user interface elements
+[14:15:45.426] [INFO   ] thread playerID: 0 terminated.
+[14:15:45.426] [INFO   ] thread playerID: 1 terminated.
+[14:15:45.443] [SEVERE ] updating countdown to 5000
+[14:15:45.444] [SEVERE ] updating countdown to 5000
+[14:15:45.545] [SEVERE ] removing card from slot 0
+[14:15:45.647] [SEVERE ] removing card from slot 1
+[14:15:45.748] [SEVERE ] removing card from slot 2
+[14:15:45.853] [SEVERE ] removing card from slot 3
+[14:15:45.955] [SEVERE ] removing card from slot 4
+[14:15:46.057] [SEVERE ] removing card from slot 5
+[14:15:46.161] [SEVERE ] removing card from slot 6
+[14:15:46.263] [SEVERE ] removing card from slot 7
+[14:15:46.364] [SEVERE ] removing card from slot 8
+[14:15:46.470] [SEVERE ] removing card from slot 9
+[14:15:46.571] [SEVERE ] removing card from slot 10
+[14:15:46.672] [SEVERE ] removing card from slot 11
+[14:15:46.673] [SEVERE ] player 1 placing token on slot 0
+[14:15:46.673] [SEVERE ] player 2 placing token on slot 1
+[14:15:46.674] [INFO   ] thread dealer terminated.
+[14:15:46.674] [INFO   ] thread dealer terminated.
+[14:15:46.674] [SEVERE ] thanks for playing... it was fun!
+[14:15:46.674] [INFO   ] thread main terminated.
