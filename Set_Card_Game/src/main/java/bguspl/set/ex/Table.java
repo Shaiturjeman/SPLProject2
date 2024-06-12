@@ -160,9 +160,11 @@ public class Table {
         // synchronized(this){
             if(slotToCard[slot] != null){
                 for(int i=0; i<env.config.players; i++){
-                    if(tokens[slot][i] == player){
-                        tokens[slot][i] = null;
-                        return true;
+                    if(tokens[slot][i] !=null){
+                        if(tokens[slot][i] == player){
+                            tokens[slot][i] = null;
+                            return true;
+                        }
                     }
                 }
             }

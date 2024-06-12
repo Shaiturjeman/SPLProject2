@@ -81,13 +81,14 @@ public class Player implements Runnable {
         this.table = table;
         this.id = id;
         this.human = human;
-        moves = new LinkedBlockingQueue<>();
-        playerTokens = new Integer[env.config.featureSize];
+        this.moves = new LinkedBlockingQueue<>();
+        this.playerTokens = new Integer[env.config.featureSize];
         for(int i=0; i < env.config.featureSize; i++)
         {
             playerTokens[i] = null;
         }
-        TokensCounter = 0;
+        this.TokensCounter = 0;
+        this.dealer = dealer;
     }
 
     /**
@@ -103,7 +104,7 @@ public class Player implements Runnable {
             if(!moves.isEmpty()){
                 int slot = moves.poll();
                 if(table.slotToCard[slot]!=null){
-                    table.placeToken(slot, this.id);
+                    table.placeToken(this.id, slot);
                     if(TokenPlaced(slot))
                     {
                         TokensCounter++;
@@ -186,7 +187,7 @@ public class Player implements Runnable {
         List<Integer> cardsOnDeck = new LinkedList<>();
         for (int i = 0 ; i < table.slotToCard.length; i++)
         {
-            if (table.slotToCard[i] != null && table.tokens[i] == null)
+            if (table.slotToCard[i] != null && table.tokens[i][0] == null)
             {
                 cardsOnDeck.add(i);
             }
@@ -219,7 +220,7 @@ public class Player implements Runnable {
         {
             try 
             {
-                synchronized(moves){
+                synchronized(this.moves){
                     moves.put(slot);
                     moves.notifyAll();
 
@@ -284,8 +285,10 @@ public class Player implements Runnable {
     public boolean TokenPlaced(int slot) {
         for(int i =0; i < env.config.players; i++)
         {
-            if(table.tokens[slot][i] == this.id)
+            if(table.tokens[slot][i]!= null){
+                if(table.tokens[slot][i] == this.id)
                 return true;
+            }
         }
         return false;
     }

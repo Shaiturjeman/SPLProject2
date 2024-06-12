@@ -153,7 +153,7 @@ public class Config {
      * as a resource.
      *
      * @param filename - the name of the configuration file.
-     * @return - a properties object with the configuration file contents.
+     * @return - a properties object with the configuration file qsasaacontents.
      */
     private static Properties loadProperties(String filename, Logger logger) {
 

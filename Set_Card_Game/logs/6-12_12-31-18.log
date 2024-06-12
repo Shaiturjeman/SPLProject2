@@ -1,0 +1,3 @@
+[12:31:19.000] [INFO   ] thread main starting.
+[12:32:21.393] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[12:32:21.424] [SEVERE ] configuration file was loaded from resources directory.

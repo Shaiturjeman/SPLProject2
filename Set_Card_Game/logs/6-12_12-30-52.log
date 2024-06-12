@@ -1,0 +1,33 @@
+[12:30:52.763] [INFO   ] thread main starting.
+[12:30:52.769] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[12:30:52.770] [SEVERE ] configuration file was loaded from resources directory.
+[12:30:53.119] [INFO   ] thread dealer starting.
+[12:30:53.120] [INFO   ] thread playerID: 0 starting.
+[12:30:53.120] [INFO   ] thread dealer starting.
+[12:30:53.120] [INFO   ] thread playerID: 1 starting.
+[12:30:53.123] [SEVERE ] updating countdown to 60000
+[12:30:53.226] [SEVERE ] placing card 58 in slot 6
+[12:30:53.332] [SEVERE ] placing card 44 in slot 9
+[12:30:53.438] [SEVERE ] placing card 3 in slot 3
+[12:30:53.541] [SEVERE ] placing card 8 in slot 5
+[12:30:53.647] [SEVERE ] placing card 18 in slot 7
+[12:30:53.750] [SEVERE ] placing card 61 in slot 1
+[12:30:53.851] [SEVERE ] placing card 75 in slot 10
+[12:30:53.954] [SEVERE ] placing card 27 in slot 4
+[12:30:54.055] [SEVERE ] placing card 48 in slot 8
+[12:30:54.160] [SEVERE ] placing card 11 in slot 2
+[12:30:54.261] [SEVERE ] placing card 67 in slot 0
+[12:30:54.366] [SEVERE ] placing card 73 in slot 11
+[12:30:56.368] [SEVERE ] updating countdown to 60000
+[12:30:57.378] [SEVERE ] exit button pressed
+[12:30:57.379] [SEVERE ] disposing of user interface elements
+[12:30:57.379] [INFO   ] thread playerID: 0 terminated.
+[12:30:57.379] [INFO   ] thread playerID: 1 terminated.
+[12:30:58.374] [SEVERE ] updating countdown to 5000
+[12:30:58.380] [SEVERE ] updating countdown to 5000
+[12:30:58.485] [SEVERE ] removing card from slot 0
+[12:30:58.592] [SEVERE ] removing card from slot 1
+[12:30:58.697] [SEVERE ] removing card from slot 2
+[12:30:58.809] [SEVERE ] removing card from slot 3
+[12:30:58.913] [SEVERE ] removing card from slot 4
+[12:30:59.015] [SEVERE ] removing card from slot 5

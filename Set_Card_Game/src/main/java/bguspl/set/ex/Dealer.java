@@ -229,7 +229,6 @@ public class Dealer implements Runnable {
      * Check who is/are the winner/s and displays them.
      */
     private void announceWinners() {
-        // TODO implement
         int[] scores = new int[players.length];
         for (int i = 0; i < players.length; i++) {
             scores[i] = players[i].score();

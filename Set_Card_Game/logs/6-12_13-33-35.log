@@ -1,0 +1,38 @@
+[13:33:35.483] [INFO   ] thread main starting.
+[13:33:35.490] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[13:33:35.493] [SEVERE ] configuration file was loaded from resources directory.
+[13:33:35.891] [INFO   ] thread dealer starting.
+[13:33:35.892] [INFO   ] thread dealer starting.
+[13:33:35.892] [INFO   ] thread playerID: 1 starting.
+[13:33:35.892] [INFO   ] thread playerID: 0 starting.
+[13:33:35.898] [SEVERE ] updating countdown to 60000
+[13:33:36.003] [SEVERE ] placing card 17 in slot 1
+[13:33:36.131] [SEVERE ] placing card 1 in slot 4
+[13:33:36.234] [SEVERE ] placing card 50 in slot 10
+[13:33:36.337] [SEVERE ] placing card 35 in slot 9
+[13:33:36.439] [SEVERE ] placing card 55 in slot 3
+[13:33:36.540] [SEVERE ] placing card 6 in slot 6
+[13:33:36.642] [SEVERE ] placing card 4 in slot 5
+[13:33:36.745] [SEVERE ] placing card 60 in slot 8
+[13:33:36.847] [SEVERE ] placing card 42 in slot 7
+[13:33:36.953] [SEVERE ] placing card 10 in slot 11
+[13:33:37.055] [SEVERE ] placing card 25 in slot 0
+[13:33:37.159] [SEVERE ] placing card 80 in slot 2
+[13:33:39.162] [SEVERE ] updating countdown to 60000
+[13:33:40.434] [SEVERE ] key 47 was pressed by player 2
+[13:33:40.434] [SEVERE ] player 2 placing token on slot 11
+[13:33:41.164] [SEVERE ] updating countdown to 60000
+[13:33:43.173] [SEVERE ] updating countdown to 60000
+[13:33:45.177] [SEVERE ] updating countdown to 60000
+[13:33:47.179] [SEVERE ] updating countdown to 60000
+[13:33:49.185] [SEVERE ] updating countdown to 60000
+[13:33:51.187] [SEVERE ] updating countdown to 60000
+[13:33:53.189] [SEVERE ] updating countdown to 60000
+[13:33:55.191] [SEVERE ] updating countdown to 60000
+[13:33:57.194] [SEVERE ] updating countdown to 60000
+[13:33:59.196] [SEVERE ] updating countdown to 60000
+[13:34:01.198] [SEVERE ] updating countdown to 60000
+[13:34:03.204] [SEVERE ] updating countdown to 60000
+[13:34:05.206] [SEVERE ] updating countdown to 60000
+[13:34:07.208] [SEVERE ] updating countdown to 60000
+[13:34:09.210] [SEVERE ] updating countdown to 60000

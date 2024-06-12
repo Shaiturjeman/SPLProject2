@@ -1,0 +1,57 @@
+[13:16:58.354] [INFO   ] thread main starting.
+[13:16:58.359] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[13:16:58.360] [SEVERE ] configuration file was loaded from resources directory.
+[13:16:58.733] [INFO   ] thread dealer starting.
+[13:16:58.734] [INFO   ] thread dealer starting.
+[13:16:58.734] [INFO   ] thread playerID: 0 starting.
+[13:16:58.734] [INFO   ] thread playerID: 1 starting.
+[13:16:58.738] [SEVERE ] updating countdown to 60000
+[13:16:58.846] [SEVERE ] placing card 60 in slot 5
+[13:16:58.948] [SEVERE ] placing card 56 in slot 8
+[13:16:59.050] [SEVERE ] placing card 35 in slot 0
+[13:16:59.153] [SEVERE ] placing card 61 in slot 10
+[13:16:59.254] [SEVERE ] placing card 78 in slot 7
+[13:16:59.360] [SEVERE ] placing card 55 in slot 4
+[13:16:59.466] [SEVERE ] placing card 5 in slot 6
+[13:16:59.571] [SEVERE ] placing card 51 in slot 11
+[13:16:59.673] [SEVERE ] placing card 37 in slot 9
+[13:16:59.774] [SEVERE ] placing card 57 in slot 1
+[13:16:59.876] [SEVERE ] placing card 64 in slot 3
+[13:16:59.982] [SEVERE ] placing card 20 in slot 2
+[13:17:01.988] [SEVERE ] updating countdown to 60000
+[13:17:03.993] [SEVERE ] updating countdown to 60000
+[13:17:06.000] [SEVERE ] updating countdown to 60000
+[13:17:08.003] [SEVERE ] updating countdown to 60000
+[13:17:10.008] [SEVERE ] updating countdown to 60000
+[13:17:10.016] [SEVERE ] key 47 was pressed by player 2
+[13:17:10.017] [SEVERE ] player 2 placing token on slot 11
+[13:17:11.323] [SEVERE ] key 47 was pressed by player 2
+[13:17:11.324] [SEVERE ] player 2 placing token on slot 11
+[13:17:12.010] [SEVERE ] updating countdown to 60000
+[13:17:12.375] [SEVERE ] key 47 was pressed by player 2
+[13:17:14.016] [SEVERE ] updating countdown to 60000
+[13:17:16.021] [SEVERE ] updating countdown to 60000
+[13:17:18.023] [SEVERE ] updating countdown to 60000
+[13:17:20.029] [SEVERE ] updating countdown to 60000
+[13:17:22.031] [SEVERE ] updating countdown to 60000
+[13:17:22.041] [SEVERE ] key 47 was pressed by player 2
+[13:17:24.032] [SEVERE ] updating countdown to 60000
+[13:17:26.033] [SEVERE ] updating countdown to 60000
+[13:17:28.037] [SEVERE ] updating countdown to 60000
+[13:17:30.040] [SEVERE ] updating countdown to 60000
+[13:17:31.300] [SEVERE ] exit button pressed
+[13:17:31.301] [SEVERE ] disposing of user interface elements
+[13:17:31.301] [INFO   ] thread playerID: 0 terminated.
+[13:17:32.046] [SEVERE ] updating countdown to 5000
+[13:17:32.054] [SEVERE ] updating countdown to 5000
+[13:17:32.157] [SEVERE ] removing card from slot 0
+[13:17:32.264] [SEVERE ] removing card from slot 1
+[13:17:32.368] [SEVERE ] removing card from slot 2
+[13:17:32.478] [SEVERE ] removing card from slot 3
+[13:17:32.582] [SEVERE ] removing card from slot 4
+[13:17:32.686] [SEVERE ] removing card from slot 5
+[13:17:32.800] [SEVERE ] removing card from slot 6
+[13:17:32.904] [SEVERE ] removing card from slot 7
+[13:17:33.010] [SEVERE ] removing card from slot 8
+[13:17:33.114] [SEVERE ] removing card from slot 9
+[13:17:33.223] [SEVERE ] removing card from slot 10
