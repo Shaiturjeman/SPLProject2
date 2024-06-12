@@ -152,6 +152,7 @@ public class Dealer implements Runnable {
                 for(int j = 0; j < env.config.tableSize; j++){
                     if(table.slotToCard[j] == cardsShouldBeRemoved[i]){
                         table.removeCard(j);
+                        env.ui.removeTokens(i);
                         cardsShouldBeRemoved[i] = null;
                     }
                 }
@@ -215,6 +216,7 @@ public class Dealer implements Runnable {
                     if(table.slotToCard[i] != null){
                         deck.add(table.slotToCard[i]);
                         table.removeCard(i);
+                        env.ui.removeTokens();
                     }
                 }
                 for(Player player : players){

@@ -103,9 +103,15 @@ public class Player implements Runnable {
         while (!terminate) {
             if(!moves.isEmpty()){
                 int slot = moves.poll();
+                System.out.println("Player " + id + " slot: " + slot);
                 if(table.slotToCard[slot]!=null){
-                    if(TokenPlaced(slot)){
+                    if(TokenPlaced(slot) && TokensCounter < env.config.featureSize){
+                        System.out.println("Token already placed");
                         removeTheToken(slot);
+                    }
+                    else if(TokensCounter == env.config.featureSize){
+                        System.out.println("Feature size reached");
+                        penalty();
                     }
                     else{
                         tokenPlaceAndCheck(slot);
@@ -220,18 +226,19 @@ public class Player implements Runnable {
      * @post - the player's score is updated in the ui.
      */
     public void point() {   
-        synchronized (this) { notify(); }
+        synchronized (this) { 
 
-        //increase the player's score by 1.
-        score++;
+            //increase the player's score by 1.
+            score++;
 
-        //update the player's score in the ui.
-        env.ui.setScore(id, score);
+            //update the player's score in the ui.
+            env.ui.setScore(id, score);
 
-        //freeze the player for marking a legal set.
-        resetTokens();
-        moves.clear();
-        env.ui.setFreeze(id, env.config.pointFreezeMillis);
+            //freeze the player for marking a legal set.
+            resetTokens();
+            moves.clear();
+            env.ui.setFreeze(id, env.config.pointFreezeMillis);
+        notify(); }
     }
 
     /**
@@ -280,8 +287,10 @@ public class Player implements Runnable {
     public void removeTheToken(int slot) {
         boolean done = this.table.removeToken(this.id, slot);
         for(int i=0 ; i<playerTokens.length; i++)
-            if(playerTokens[i] == table.slotToCard[slot])
+            if(playerTokens[i] == table.slotToCard[slot]){
                 playerTokens[i] = -1;
+                env.ui.removeToken(this.id, slot);
+            }
         if(done)    
             TokensCounter--;
     }
@@ -297,8 +306,12 @@ public class Player implements Runnable {
             playerTokens[i] = table.slotToCard[slot];
 
             if(TokensCounter == env.config.featureSize){
-                boolean legalSet = dealer.SetCheck(playerTokens);
+                boolean legalSet = this.dealer.SetCheck(playerTokens);
                 if(legalSet){
+                    for(int j=0; j<playerTokens.length; j++)
+                    {
+                        env.ui.removeToken(this.id, table.cardToSlot[playerTokens[j]]);
+                    }
                     point();
                 }
                 else{
@@ -311,9 +324,13 @@ public class Player implements Runnable {
     }
  // Reset the tokens of the player and the counter
     public void resetTokens(){
-        for(int i = 0; i < env.config.featureSize; i++)
+        for(int i=0; i<this.playerTokens.length; i++)
         {
-            playerTokens[i] = -1;
+            if(this.playerTokens[i] != -1)
+            {
+                int pToken = table.cardToSlot[this.playerTokens[i]];
+                env.ui.removeToken(this.id, pToken);
+            }
         }
         TokensCounter = 0;
     }
