@@ -163,6 +163,7 @@ public class Table {
                     if(tokens[slot][i] !=null){
                         if(tokens[slot][i] == player){
                             tokens[slot][i] = null;
+                            env.ui.removeToken(player, slot);
                             return true;
                         }
                     }

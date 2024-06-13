@@ -1,0 +1,26 @@
+[14:35:49.923] [INFO   ] thread main starting.
+[14:35:49.928] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[14:35:49.930] [SEVERE ] configuration file was loaded from resources directory.
+[14:35:50.229] [INFO   ] thread dealer starting.
+[14:35:50.230] [INFO   ] thread dealer starting.
+[14:35:50.230] [INFO   ] thread playerID: 0 starting.
+[14:35:50.230] [INFO   ] thread playerID: 1 starting.
+[14:35:50.233] [SEVERE ] updating countdown to 60000
+[14:35:50.336] [SEVERE ] placing card 10 in slot 5
+[14:35:50.439] [SEVERE ] placing card 20 in slot 6
+[14:35:50.539] [SEVERE ] placing card 30 in slot 0
+[14:35:50.648] [SEVERE ] placing card 36 in slot 1
+[14:35:50.756] [SEVERE ] placing card 22 in slot 2
+[14:35:50.857] [SEVERE ] placing card 50 in slot 8
+[14:35:50.958] [SEVERE ] placing card 77 in slot 11
+[14:35:51.060] [SEVERE ] placing card 76 in slot 7
+[14:35:51.166] [SEVERE ] placing card 18 in slot 3
+[14:35:51.268] [SEVERE ] placing card 53 in slot 4
+[14:35:51.370] [SEVERE ] placing card 43 in slot 10
+[14:35:51.474] [SEVERE ] placing card 7 in slot 9
+[14:35:53.481] [SEVERE ] updating countdown to 56753
+[14:35:55.489] [SEVERE ] updating countdown to 54744
+[14:35:57.493] [SEVERE ] updating countdown to 52740
+[14:35:59.497] [SEVERE ] updating countdown to 50736
+[14:36:01.501] [SEVERE ] updating countdown to 48732
+[14:36:03.504] [SEVERE ] updating countdown to 46729

@@ -147,17 +147,20 @@ public class Dealer implements Runnable {
      * Checks cards should be removed from the table and removes them.
      */
     private void removeCardsFromTable() {
-        for(int i = 0; i < cardsShouldBeRemoved.length; i++){
-            if(cardsShouldBeRemoved[i] == null){
-                for(int j = 0; j < env.config.tableSize; j++){
-                    if(table.slotToCard[j] == cardsShouldBeRemoved[i]){
-                        table.removeCard(j);
-                        env.ui.removeTokens(i);
-                        cardsShouldBeRemoved[i] = null;
+        synchronized(table){
+            for(int i = 0; i < cardsShouldBeRemoved.length; i++){
+                if(cardsShouldBeRemoved[i] != null){
+                    for(int j = 0; j < env.config.tableSize; j++){
+                        if(table.slotToCard[j] == cardsShouldBeRemoved[i]){
+                            int toRemove = table.cardToSlot[cardsShouldBeRemoved[i]];
+                            table.removeCard(j);
+                            env.ui.removeTokens(toRemove);
+                            cardsShouldBeRemoved[i] = -1;
+                        }
                     }
                 }
-            }
 
+            }
         }
     }
 
@@ -181,7 +184,7 @@ public class Dealer implements Runnable {
      */
     private void sleepUntilWokenOrTimeout() {
         try {
-            this.dealerThread.sleep(20);
+            this.dealerThread.sleep(1000);
         } catch (InterruptedException ignored) {
         }
 
@@ -216,11 +219,12 @@ public class Dealer implements Runnable {
                     if(table.slotToCard[i] != null){
                         deck.add(table.slotToCard[i]);
                         table.removeCard(i);
-                        env.ui.removeTokens();
+                        env.ui.removeTokens(i);
                     }
                 }
                 for(Player player : players){
                     player.resetTokens();;
+                    player.moves.clear();
                 }
         
             }
@@ -265,10 +269,15 @@ public class Dealer implements Runnable {
             
         }
         if(env.util.testSet(cardsCopy)){
-            cardsShouldBeRemoved = cards;
+            for(int i=0; i<cards.length; i++){
+                int copy = cards[i];
+                cardsShouldBeRemoved[i] = copy;
+            }
+            removeCardsFromTable();
             return true;
         }
         return false;
         
     }
+
 }

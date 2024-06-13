@@ -3,6 +3,7 @@ package bguspl.set.ex;
 import java.util.LinkedList;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.List;
+import java.util.Random;
 
 import bguspl.set.Env;
 
@@ -105,12 +106,17 @@ public class Player implements Runnable {
                 int slot = moves.poll();
                 System.out.println("Player " + id + " slot: " + slot);
                 if(table.slotToCard[slot]!=null){
-                    if(TokenPlaced(slot) && TokensCounter < env.config.featureSize){
+                    System.out.println("Card in slot: " + table.slotToCard[slot]);
+                    if(TokenPlaced(slot)){
                         System.out.println("Token already placed");
+                        System.out.println("Dealer is goin to delete the token from the table  ");
                         removeTheToken(slot);
+
                     }
-                    else if(TokensCounter == env.config.featureSize){
+                    else if(this.TokensCounter >= env.config.featureSize){
+
                         System.out.println("Feature size reached");
+                        
                         penalty();
                     }
                     else{
@@ -135,53 +141,50 @@ public class Player implements Runnable {
         aiThread = new Thread(() -> {
             env.logger.info("thread " + Thread.currentThread().getName() + " starting.");
             while (!terminate) {
-                List<int[]> potentialSets = findPotentialSet();
-                if(!potentialSets.isEmpty())
-                {
-                    int[] set = potentialSets.get(0);
-                    for (int card : set)
-                    {
-                        if (table.cardToSlot[card] == null)
-                        {
-                            continue;
-                        }
-                        int slot = table.cardToSlot[card];
-                        synchronized (moves)
-                        {
-                            try {
-                                moves.put(slot);
-                            } catch (InterruptedException ignored) {
-                                ignored.printStackTrace();
-                            }
-                            moves.notify();
-                        }
+                int nextMove = GenerateMove();
+                if (table.slotToCard[nextMove] != null) {
+                    keyPressed(nextMove);
+                    if (TokenPlaced(nextMove)) {
+                        removeTheToken(nextMove);
+                    }  
+                    else if (this.TokensCounter >= env.config.featureSize) {
+                        penalty();
+                    }
+                    else {
+                        tokenPlaceAndCheck(nextMove);
                     }
                 }
+            }
                 try {
                     synchronized (this) { wait(); }
                 } catch (InterruptedException ignored) {}
-            }
             env.logger.info("thread " + Thread.currentThread().getName() + " terminated.");
         }, "computer-" + id);
         aiThread.start();
     }
 
-    /**
-     * A method that finds a potential set of cards on the table.
-     */
-    private List<int[]> findPotentialSet() {
-        List<Integer> cardsOnDeck = new LinkedList<>();
-        for (int i = 0 ; i < table.slotToCard.length; i++)
-        {
-            if (table.slotToCard[i] != null && table.tokens[i][0] == null)
-            {
-                cardsOnDeck.add(i);
-            }
-        }
-        List<int[]> potentialSets = env.util.findSets(cardsOnDeck, 1);
-        return potentialSets;
+    private int GenerateMove() {
+        Random rMove = new Random();
+        int nextMove = rMove.nextInt(env.config.tableSize);
+        return nextMove;
+    }
 
-    } 
+    // /**
+    //  * A method that finds a potential set of cards on the table.
+    //  */
+    // private List<int[]> findPotentialSet() {
+    //     List<Integer> cardsOnDeck = new LinkedList<>();
+    //     for (int i = 0 ; i < table.slotToCard.length; i++)
+    //     {
+    //         if (table.slotToCard[i] != null && table.tokens[i][0] == null)
+    //         {
+    //             cardsOnDeck.add(i);
+    //         }
+    //     }
+    //     List<int[]> potentialSets = env.util.findSets(cardsOnDeck, 1);
+    //     return potentialSets;
+
+    // } 
     
 
     /**
@@ -189,7 +192,6 @@ public class Player implements Runnable {
      */
     public void terminate() {
         terminate = true; 
-        playerThread.interrupt();
         if (aiThread != null)
         {
             aiThread.interrupt();
@@ -226,19 +228,32 @@ public class Player implements Runnable {
      * @post - the player's score is updated in the ui.
      */
     public void point() {   
-        synchronized (this) { 
+        int test = table.countCards(); // force table.countCards to return 3 in the test
+        //increase the player's score by 1.
+        score++;
 
-            //increase the player's score by 1.
-            score++;
+        //update the player's score in the ui.
+        env.ui.setScore(id, score);
 
-            //update the player's score in the ui.
-            env.ui.setScore(id, score);
+        //freeze the player for marking a legal set.
+        long freezeTime = env.config.pointFreezeMillis;
+        try
+        {
+            while(freezeTime > 0)
+            {
+                env.ui.setFreeze(id, freezeTime);
+                Thread.sleep(freezeTime);               
+                freezeTime -= 1000;
+            }
+            env.ui.setFreeze(id, 0);
+        
+        this.resetTokens();
+        this.TokensCounter = 0;
+        this.moves.clear();
+        }
+        catch (InterruptedException ignored){}
 
-            //freeze the player for marking a legal set.
-            resetTokens();
-            moves.clear();
-            env.ui.setFreeze(id, env.config.pointFreezeMillis);
-        notify(); }
+
     }
 
     /**
@@ -247,21 +262,22 @@ public class Player implements Runnable {
     public void penalty() {
 
         //freeze the player for marking an illegal set.
-        env.ui.setFreeze(id, env.config.penaltyFreezeMillis);
-        
+        long freezeTime = env.config.penaltyFreezeMillis;
         try
         {
-            Thread.sleep(env.config.penaltyFreezeMillis);
+            while(freezeTime > 0)
+            {
+                env.ui.setFreeze(id, freezeTime);
+                Thread.sleep(freezeTime);               
+                freezeTime -= 1000;
+            }
+            env.ui.setFreeze(id, 0);
+        
+        this.resetTokens();
+        this.TokensCounter = 0;
+        this.moves.clear();
         }
-        catch (InterruptedException ignored)
-        {
-            Thread.currentThread().interrupt();
-        }
-
-        //unfreeze the player when the penalty is over.
-        moves.clear();
-        resetTokens();
-        env.ui.setFreeze(id, 0);
+        catch (InterruptedException ignored){}
 
     }
 
@@ -274,64 +290,96 @@ public class Player implements Runnable {
     }
     // Check if the token is  already placed on the table
     public boolean TokenPlaced(int slot) {
-        for(int i =0; i < env.config.players; i++)
-        {
-            if(table.tokens[slot][i]!= null){
-                if(table.tokens[slot][i] == this.id)
-                return true;
+        // synchronized(table){
+            for(int i =0; i < playerTokens.length; i++)
+            {
+                if(playerTokens[i] != -1)
+                {
+                    int playerCardToSlot = table.cardToSlot[playerTokens[i]];
+                    if(playerCardToSlot == slot)
+                    {
+                        return true;
+                    } 
+                }
+
             }
-        }
+
         return false;
+
     }
+
+
     // Remove the token from the table
     public void removeTheToken(int slot) {
-        boolean done = this.table.removeToken(this.id, slot);
         for(int i=0 ; i<playerTokens.length; i++)
             if(playerTokens[i] == table.slotToCard[slot]){
                 playerTokens[i] = -1;
-                env.ui.removeToken(this.id, slot);
             }
+        boolean done = this.table.removeToken(this.id, slot);
         if(done)    
             TokensCounter--;
     }
+
+
     // Place a token on the table and check if a set is formed
     public void tokenPlaceAndCheck(int slot) {
         if(TokensCounter < env.config.featureSize)
         {
             this.table.placeToken(this.id, slot);
             TokensCounter++;
-            int i=0;
-            while(playerTokens[i] != -1)
-                i++;
-            playerTokens[i] = table.slotToCard[slot];
+            boolean placed = false;
+            for(int i=0; i<playerTokens.length && placed == false; i++){
+                if(playerTokens[i] == -1){
+                    playerTokens[i] = table.slotToCard[slot];
+                    placed = true;
+                    
+                }
+            
+            }
+            if(placed == false){
+                penalty();
+            }
 
-            if(TokensCounter == env.config.featureSize){
+            if(this.TokensCounter == env.config.featureSize){
                 boolean legalSet = this.dealer.SetCheck(playerTokens);
                 if(legalSet){
-                    for(int j=0; j<playerTokens.length; j++)
-                    {
-                        env.ui.removeToken(this.id, table.cardToSlot[playerTokens[j]]);
-                    }
+
+                    this.resetTokens();
+                    this.TokensCounter = 0;
+                    this.moves.clear();
                     point();
+                    
                 }
                 else{
+
                     penalty();
                 }
 
             }
         }
+
+    else if(this.TokensCounter >= env.config.featureSize){
+
+        penalty();
+    }
         
     }
  // Reset the tokens of the player and the counter
     public void resetTokens(){
+        synchronized(this){
         for(int i=0; i<this.playerTokens.length; i++)
         {
-            if(this.playerTokens[i] != -1)
+            if(this.playerTokens[i] != -1 && playerTokens[i] != null)
             {
                 int pToken = table.cardToSlot[this.playerTokens[i]];
-                env.ui.removeToken(this.id, pToken);
+                if(pToken != -1)
+                {
+                    table.removeToken(this.id, pToken);
+                }
             }
+            playerTokens[i] = -1;
         }
         TokensCounter = 0;
+        }
     }
 }
