@@ -156,7 +156,9 @@ public class Player implements Runnable {
                 }
             }
                 try {
-                    synchronized (this) { wait(); }
+                    synchronized (this) { 
+                        wait();
+                     }
                 } catch (InterruptedException ignored) {}
             env.logger.info("thread " + Thread.currentThread().getName() + " terminated.");
         }, "computer-" + id);
