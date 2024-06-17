@@ -1,0 +1,38 @@
+[17:47:13.119] [INFO   ] thread main starting.
+[17:47:13.128] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[17:47:13.130] [SEVERE ] configuration file was loaded from resources directory.
+[17:47:13.469] [INFO   ] thread dealer starting.
+[17:47:13.470] [INFO   ] thread playerID: 0 starting.
+[17:47:13.471] [INFO   ] thread dealer starting.
+[17:47:13.471] [INFO   ] thread playerID: 5 starting.
+[17:47:13.470] [INFO   ] thread playerID: 4 starting.
+[17:47:13.470] [INFO   ] thread playerID: 3 starting.
+[17:47:13.470] [INFO   ] thread playerID: 1 starting.
+[17:47:13.470] [INFO   ] thread playerID: 2 starting.
+[17:47:13.474] [SEVERE ] updating countdown to 60000
+[17:47:13.473] [INFO   ] thread computer-3 starting.
+[17:47:13.472] [INFO   ] thread computer-4 starting.
+[17:47:13.472] [INFO   ] thread computer-5 starting.
+[17:47:13.482] [INFO   ] thread computer-2 starting.
+[17:47:13.595] [SEVERE ] placing card 25 in slot 2
+[17:47:13.718] [SEVERE ] placing card 47 in slot 8
+[17:47:13.826] [SEVERE ] placing card 7 in slot 5
+[17:47:13.927] [SEVERE ] placing card 73 in slot 4
+[17:47:14.032] [SEVERE ] placing card 22 in slot 3
+[17:47:14.166] [SEVERE ] placing card 60 in slot 9
+[17:47:14.272] [SEVERE ] placing card 30 in slot 6
+[17:47:14.373] [SEVERE ] placing card 55 in slot 0
+[17:47:14.474] [SEVERE ] placing card 79 in slot 11
+[17:47:14.579] [SEVERE ] placing card 18 in slot 1
+[17:47:14.684] [SEVERE ] placing card 53 in slot 7
+[17:47:14.785] [SEVERE ] placing card 43 in slot 10
+[17:47:15.788] [SEVERE ] updating countdown to 57685
+[17:47:16.810] [SEVERE ] updating countdown to 56663
+[17:47:17.820] [SEVERE ] updating countdown to 55653
+[17:47:18.828] [SEVERE ] updating countdown to 54645
+[17:47:19.830] [SEVERE ] updating countdown to 53643
+[17:47:20.840] [SEVERE ] updating countdown to 52633
+[17:47:21.854] [SEVERE ] updating countdown to 51619
+[17:47:22.856] [SEVERE ] updating countdown to 50617
+[17:47:23.858] [SEVERE ] updating countdown to 49615
+[17:47:24.861] [SEVERE ] updating countdown to 48612

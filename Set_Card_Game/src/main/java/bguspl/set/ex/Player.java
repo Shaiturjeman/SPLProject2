@@ -1,8 +1,6 @@
 package bguspl.set.ex;
 
-import java.util.LinkedList;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.List;
 import java.util.Random;
 
 import bguspl.set.Env;
@@ -141,7 +139,9 @@ public class Player implements Runnable {
         aiThread = new Thread(() -> {
             env.logger.info("thread " + Thread.currentThread().getName() + " starting.");
             while (!terminate) {
+                
                 int nextMove = GenerateMove();
+                if(!moves.isEmpty()){}
                 if (table.slotToCard[nextMove] != null) {
                     keyPressed(nextMove);
                     if (TokenPlaced(nextMove)) {
@@ -154,6 +154,7 @@ public class Player implements Runnable {
                         tokenPlaceAndCheck(nextMove);
                     }
                 }
+                
             }
                 try {
                     synchronized (this) { 
@@ -230,7 +231,7 @@ public class Player implements Runnable {
      * @post - the player's score is updated in the ui.
      */
     public void point() {   
-        int test = table.countCards(); // force table.countCards to return 3 in the test
+ 
         //increase the player's score by 1.
         score++;
 
@@ -331,11 +332,15 @@ public class Player implements Runnable {
             TokensCounter++;
             boolean placed = false;
             for(int i=0; i<playerTokens.length && placed == false; i++){
-                if(playerTokens[i] == -1){
-                    playerTokens[i] = table.slotToCard[slot];
-                    placed = true;
-                    
+                if(playerTokens[i] != null && table.slotToCard[slot] != null){
+                    if(playerTokens[i] == -1){
+                        playerTokens[i] = table.slotToCard[slot];
+                        placed = true;
+                        
+                    }
+
                 }
+
             
             }
             if(placed == false){

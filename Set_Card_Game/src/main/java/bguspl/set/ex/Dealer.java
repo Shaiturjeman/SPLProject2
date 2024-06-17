@@ -85,6 +85,7 @@ public class Dealer implements Runnable {
             updateTimerDisplay(false);
             removeAllCardsFromTable();
         }
+        if(!terminate)terminate();
         announceWinners();
         env.logger.info("thread " + Thread.currentThread().getName() + " terminated.");
     }
@@ -108,11 +109,12 @@ public class Dealer implements Runnable {
                 }
             }
             
-             if(deck.isEmpty() && table.countCards() != 0){
+             if(deck.isEmpty() || table.countCards() != 0){
                 List<Integer> cardsOnTable = table.getCardOnTabele();
                 if(env.util.findSets(cardsOnTable, 1).size() == 0){
+                    
                     announceWinners();
-                    terminate();
+
                 }
             }
         }
@@ -124,13 +126,16 @@ public class Dealer implements Runnable {
      */
 
     public void terminate() {
-        terminate = true;
+        
         for(Player player : players){
             if(!player.getTerminate()){
                 player.terminate();
             }
         }
+        announceWinners();
         env.ui.dispose();
+        terminate = true;
+        this.dealerThread.interrupt();
 
     }
 
@@ -237,23 +242,31 @@ public class Dealer implements Runnable {
      * Check who is/are the winner/s and displays them.
      */
     private void announceWinners() {
-        int[] scores = new int[players.length];
-        for (int i = 0; i < players.length; i++) {
-            scores[i] = players[i].score();
-        }
-        int maxScore = 0;
-        for (int score : scores) {
-            if (score > maxScore) {
-                maxScore = score;
-            }
-        }
-        for (int i = 0; i < players.length; i++) {
-            if (scores[i] == maxScore) {
-                env.ui.placeToken(i, i);
-            }
-        }
-        
+     
 
+    int highestScore = Integer.MIN_VALUE;
+    int numOfWinners = 0;
+    for(int i = 0; i < players.length; i++){
+        if(players[i].score() > highestScore){
+            highestScore = players[i].score();
+        }
+    }
+    for(int i = 0; i < players.length; i++){
+        if(players[i].score() == highestScore){
+            numOfWinners++;
+        }
+    }
+    int[] Champions = new int[numOfWinners];
+    int j = 0;
+    for(int i = 0; i < players.length; i++){
+        if(players[i].score() == highestScore){
+            Champions[j] = i;
+            j++;
+        }
+    }
+
+    env.ui.announceWinner(Champions);
+    
 
     }
 
