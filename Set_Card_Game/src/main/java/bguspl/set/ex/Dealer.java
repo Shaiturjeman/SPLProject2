@@ -85,7 +85,9 @@ public class Dealer implements Runnable {
             updateTimerDisplay(false);
             removeAllCardsFromTable();
         }
-        if(!terminate)terminate();
+        if(!terminate){
+            terminate();
+        }
         announceWinners();
         env.logger.info("thread " + Thread.currentThread().getName() + " terminated.");
     }

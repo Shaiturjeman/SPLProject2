@@ -1,0 +1,40 @@
+[10:10:34.564] [INFO   ] thread main starting.
+[10:10:34.924] [SEVERE ] cannot read configuration file config.properties trying from resources.
+[10:10:34.942] [SEVERE ] configuration file was loaded from resources directory.
+[10:10:37.595] [INFO   ] thread dealer starting.
+[10:10:39.359] [INFO   ] thread playerID: 0 starting.
+[10:10:39.912] [INFO   ] thread playerID: 1 starting.
+[10:10:39.913] [INFO   ] thread dealer starting.
+[10:10:39.945] [SEVERE ] updating countdown to 60000
+[10:10:40.055] [SEVERE ] placing card 26 in slot 7
+[10:10:40.158] [SEVERE ] placing card 1 in slot 2
+[10:10:40.261] [SEVERE ] placing card 60 in slot 1
+[10:10:40.364] [SEVERE ] placing card 46 in slot 3
+[10:10:40.467] [SEVERE ] placing card 25 in slot 10
+[10:10:40.570] [SEVERE ] placing card 38 in slot 9
+[10:10:40.673] [SEVERE ] placing card 58 in slot 6
+[10:10:40.776] [SEVERE ] placing card 22 in slot 0
+[10:10:40.880] [SEVERE ] placing card 36 in slot 4
+[10:10:40.983] [SEVERE ] placing card 71 in slot 8
+[10:10:41.087] [SEVERE ] placing card 77 in slot 11
+[10:10:41.190] [SEVERE ] placing card 20 in slot 5
+[10:10:42.197] [SEVERE ] updating countdown to 57746
+[10:10:43.210] [SEVERE ] updating countdown to 56733
+[10:10:44.222] [SEVERE ] updating countdown to 55721
+[10:10:45.235] [SEVERE ] updating countdown to 54708
+[10:10:46.247] [SEVERE ] updating countdown to 53696
+[10:10:47.262] [SEVERE ] updating countdown to 52682
+[10:10:48.279] [SEVERE ] updating countdown to 51664
+[10:10:49.295] [SEVERE ] updating countdown to 50648
+[10:10:50.307] [SEVERE ] updating countdown to 49636
+[10:10:51.320] [SEVERE ] updating countdown to 48623
+[10:10:52.333] [SEVERE ] updating countdown to 47610
+[10:10:53.345] [SEVERE ] updating countdown to 46598
+[10:10:54.359] [SEVERE ] updating countdown to 45584
+[10:10:55.370] [SEVERE ] updating countdown to 44573
+[10:10:56.383] [SEVERE ] updating countdown to 43560
+[10:10:57.393] [SEVERE ] updating countdown to 42550
+[10:10:58.406] [SEVERE ] updating countdown to 41537
+[10:10:59.422] [SEVERE ] updating countdown to 40521
+[10:11:00.437] [SEVERE ] updating countdown to 39506
+[10:11:01.449] [SEVERE ] updating countdown to 38494

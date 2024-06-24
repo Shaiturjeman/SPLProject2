@@ -214,7 +214,6 @@ public class Player implements Runnable {
                 synchronized(this.moves){
                     moves.put(slot);
                     moves.notifyAll();
-
                 }
                 
             } 
